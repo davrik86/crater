@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -43,7 +45,7 @@ public class CraterItems {
 	@FindBy (xpath="//input[@type=\"checkbox\"][1]")
 	public WebElement itemSelectItemName;
 	
-	@FindBy (xpath="//button[contains(@id,\"headlessui-menu-button-5\")]")//add 5 after button-
+	@FindBy (xpath="(//button[contains(@id, 'headlessui-menu-button')])[3]")//add 5 after button-
 	public WebElement item3Dots;
 	
 	@FindBy (xpath= "//div[contains(@class,\"relative table-container\")]")
@@ -63,6 +65,11 @@ public class CraterItems {
 	
 	@FindBy (xpath ="//*[text()='Books']")
 	public WebElement itemBook;
+
+	@FindBy (xpath="//a[text()= ' Edit']")
+    public WebElement dot3EditBttn;	
 	
+	@FindBy (xpath="//h3[text()='Edit Item']")
+    public WebElement editPage;
 	
 }

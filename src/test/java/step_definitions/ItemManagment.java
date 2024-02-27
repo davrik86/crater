@@ -26,6 +26,7 @@ public class ItemManagment {
 	CraterItems itemsPage=  new CraterItems();
 	Itemspage itPage= new Itemspage();
 	String itemname="";
+	String itemPrice="";
 	@Given("As a {string} user, I am loged in")
 	public void as_a_user_i_am_loged_in(String user_type) {
 	    clp.login(user_type);
@@ -52,7 +53,7 @@ public class ItemManagment {
 	@When("I provide item name {string} price {string} unit {string} and description {string}")
 	public void i_provide_item_name_price_unit_and_description(String item_name, String item_price, String item_unit, String item_des) {
 		itemname=item_name +utils.randomNumber();
-		
+		itemPrice=item_price;
 		utils.waitForElementToBeVisible(itPage.items_input_page_price_box);
 	    utils.sendkeysWithActionsClass(itemsPage.itemName, itemname);
 	    utils.sendkeysWithActionsClass(itemsPage.itemPrice, item_price);
@@ -68,21 +69,48 @@ public class ItemManagment {
 		utils.waituntilURLcontains("items");
 	}
 
-	@Then("the item is added the list table")
-	public void the_item_is_added_the_list_table() {
-		
+	@Then("The item is added to the item list table")
+	public void the_item_is_added_to_the_item_list_table() throws InterruptedException {
+		utils.waitUntilElementClickable(itPage.items_page_filter_btn);
+		Thread.sleep(2000);
+		itPage.items_page_filter_btn.click();
+		utils.waitForElementToBeVisible(itPage.items_page_filter_name_box);
+		itPage.items_page_filter_name_box.sendKeys(itemname);
+		System.out.println(itemname);
+		System.out.println(itPage.items_input_page_name_box.getText());
 		utils.waitUntilElementVisibleWithLocator(By.xpath("//a[text()='"+itemname+"']"));
+		utils.waituntilURLcontains("items");
 		Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//a[text()='"+itemname+"']")).isDisplayed());
 	}
+	
 
 	@Then("I delete the created item")
-	public void i_delete_the_created_item() {
+	public void i_delete_the_created_item() throws InterruptedException {
+	
+		Thread.sleep(2000);
+		utils.waitUntilElementVisibleWithLocator(By.xpath("//a[text()='"+itemname+"']"));
 		itemsPage.item3Dots.click();	
 		itemsPage.deliteBtn.click();
 		itemsPage.alertOkBtn.click();
 		
 	}
-
+	@When("I update the item price with {string}")
+	public void i_update_the_item_price_with(String newPrice) {
+		itemPrice=newPrice;
+		
+		itemsPage.item3Dots.click();
+	    utils.waitForElementToBeVisible(itemsPage.dot3EditBttn);
+	    itemsPage.dot3EditBttn.click();
+	    utils.waitForElementToBeVisible(itemsPage.editPage);
+	    Assert.assertTrue(itemsPage.editPage.isDisplayed());
+	    itemsPage.itemPrice.clear();
+	    itemsPage.itemPrice.sendKeys(newPrice);
+	    itemsPage.itemSaveBttn.click();
+	    utils.waituntilURLcontains("items");
+		Assert.assertTrue(itPage.items_items_text.isDisplayed());
+		
+	}		
+	
 
 
 }

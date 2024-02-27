@@ -1,10 +1,11 @@
 package step_definitions;
 
-import static org.junit.Assert.assertTrue;
 
 
+import org.hamcrest.core.StringContains;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import Utils.BrowserUtils;
 import Utils.DataReader;
@@ -14,6 +15,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.CraterLoginPage;
 import pages.Dashboard;
+
 
 
 public class AccessControlSteps {
@@ -31,6 +33,11 @@ public class AccessControlSteps {
 	    Assert.assertTrue(acp.loginPass.isDisplayed());
 	    Assert.assertTrue(acp.loginUserName.isDisplayed());
 	    Assert.assertTrue(acp.frgtPassLink.isDisplayed());
+	    Assert.assertTrue(acp.passwordText.isDisplayed());
+	    Assert.assertTrue(acp.emailText.isDisplayed());
+	    Assert.assertTrue(acp.copyrightTetx.isDisplayed());
+	    Assert.assertTrue(acp.headingSimple.isDisplayed());
+	    Assert.assertTrue(acp.craterText.isDisplayed());
 	}
 	@When("I enter valid username and valid password")
 	public void i_enter_valid_username_and_valid_password() {
@@ -72,10 +79,51 @@ public class AccessControlSteps {
 	}
 	@Then("I should not be loged in")
 	public void i_should_not_be_loged_in() {
+		//SoftAssert softAssert= new SoftAssert();
+	
 		utils.waituntilURLcontains("login");
 		String curretnURL= Driver.getDriver().getCurrentUrl();
 		Assert.assertTrue(curretnURL.contains("login"));
-		
+		utils.waitForElementToBeVisible(acp.Error);
+		Assert.assertTrue(acp.Error.isDisplayed());
 	}
 	
+	@When("I enter invalid {string} and invalid {string} including blank option")
+	public void i_enter_invalid_and_invalid_including_blank_option(String username, String password) {
+		acp.loginUserName.sendKeys(username);
+		acp.loginPass.sendKeys(password);
+	}
+	@Then("I should not be loged in\\(using blank)")
+	public void i_should_not_be_loged_in_using_blank() {
+		utils.waituntilURLcontains("login");
+		Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
+	}
+	@When("I click on Forget Password? link")
+	public void i_click_on_forget_password_link() {
+	    acp.frgtPassLink.click();
+	}
+	@When("enter an invalid {string} I should see the  Errormessage")
+	public void enter_an_invalid_i_should_see_the_errormessage(String invEmail) {
+		utils.waitForElementToBeVisible(acp.enter_Email_Reset_page);
+		acp.enter_Email_Reset_page.sendKeys(invEmail);
+		acp.Send_Reset_LinkBTTN.click();
+//		utils.waitForElementToBeVisible(acp.IncorrectEmail);
+		if(acp.IncorrectEmail.getText().contains("Incorrect Email.")) {
+			Assert.assertTrue(acp.IncorrectEmail.isDisplayed());
+		}
+		if(acp.fieldIsRequiered.getText().contains("Field is required")) {
+			Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
+		}
+		
+		
+//		Assert.assertTrue(acp.IncorrectEmail.isDisplayed());
+//		Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
+	}	  
+	
+	@When("I click with leaving  the email as blank I should see the  Errormessage")
+	public void i_click_with_leaving_the_email_as_blank_i_should_see_the_errormessage() {
+		utils.waitForElementToBeVisible(acp.Send_Reset_LinkBTTN);
+		acp.Send_Reset_LinkBTTN.click();
+		Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
+	}
 	}

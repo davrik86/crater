@@ -25,7 +25,7 @@ public class Hooks {
 					Utils.Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(screenshot, "image/png", "screenshot");
 		}
-		//Utils.Driver.quitDriver();
+//		Utils.Driver.quitDriver();
 		
 	}
 }

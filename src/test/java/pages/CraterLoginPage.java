@@ -21,9 +21,24 @@ public class CraterLoginPage {
 	@FindBy (xpath="//input[@name=\"email\"]")
 	public WebElement loginUserName;
 	
+	@FindBy (xpath="//div[contains(text(),\"Email\")]")
+	public WebElement emailText;
+	
 	//password field
 	@FindBy (xpath="//input[@name=\"password\"]")
 	public WebElement loginPass;
+	
+	@FindBy (xpath="//div[contains(text(),\"Password\")]")
+	public WebElement passwordText;
+	
+	@FindBy (xpath="//p[contains(text(),\"Copyright \")]")
+	public WebElement copyrightTetx;
+	
+	@FindBy (xpath="//h1[text()='Simple Invoicing for Individuals Small Businesses']")
+	public WebElement headingSimple;
+	
+	@FindBy (xpath="//p[contains(text(),'Crater helps ')]")
+	public WebElement craterText;
 	
 	//login button
 	@FindBy (xpath="//button[@type=\"submit\"]")
@@ -47,6 +62,17 @@ public class CraterLoginPage {
 	@FindBy (xpath="//span[text()='Field is required']")
 	public WebElement fieldIsRequiered;
 	
+	@FindBy (xpath="//span[text()='Incorrect Email.']")	
+	public WebElement IncorrectEmail;
+	
+	@FindBy (xpath="//span[text()='']")	
+	public WebElement resetErrormsgs;
+	
+	@FindBy (xpath="//input[@name='email']")
+	public WebElement enter_Email_Reset_page;
+	
+	@FindBy (xpath="//div[text()='Send Reset Link']")
+	public WebElement Send_Reset_LinkBTTN;
 	
 	// user level type     
 	public void login(String user_type) {

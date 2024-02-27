@@ -66,6 +66,12 @@ public class Itemspage {
     
     @FindBy (xpath = "//button[text()=' Update Item']")
     public WebElement items_page_update_item_btn;
+    
+    @FindBy (xpath = "//h3[text()='Items']")
+	public WebElement items_items_text;
+
+    
+    
 }
 
 
