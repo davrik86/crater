@@ -35,9 +35,11 @@ public class Driver {
 			case "firefox":
 				driver= new FirefoxDriver();
 				break;
-			case "firefox- headless":
+			case "firefox-headless":
 				FirefoxOptions firefoxOptions= new FirefoxOptions();
 				firefoxOptions.addArguments("--headless");
+				firefoxOptions.addArguments("--window-size=3840,2400");
+				driver=new FirefoxDriver(firefoxOptions);
 				break;
 			case "safari":
 				driver= new SafariDriver();
