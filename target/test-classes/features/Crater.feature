@@ -1,3 +1,4 @@
+
 Feature: Crater items functionality
 	@CraterAddItem
 	Scenario: As a user, I am able to create an item or a service
@@ -9,6 +10,7 @@ Feature: Crater items functionality
 		And I click Save Item button 
 		Then The Item is added to the Item list table
 		And I delete the item
+	
 	@CratorUpdateItem
 	Scenario: As a user, I am able to update an item or a service
 		Given As an entity user, I am logged in

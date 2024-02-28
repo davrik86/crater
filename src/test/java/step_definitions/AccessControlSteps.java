@@ -100,10 +100,11 @@ public class AccessControlSteps {
 	    acp.frgtPassLink.click();
 	}
 	@When("enter an invalid {string} I should see the  Errormessage")
-	public void enter_an_invalid_i_should_see_the_errormessage(String invEmail) {
+	public void enter_an_invalid_i_should_see_the_errormessage(String invEmail) throws InterruptedException {
 		utils.waitForElementToBeVisible(acp.enter_Email_Reset_page);
 		acp.enter_Email_Reset_page.sendKeys(invEmail);
 		acp.Send_Reset_LinkBTTN.click();
+		Thread.sleep(2000);
 		utils.waitForElementToBeVisible(acp.IncorrectEmail);
 
 		Assert.assertTrue(acp.IncorrectEmail.isDisplayed());
