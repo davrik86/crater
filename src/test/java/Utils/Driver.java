@@ -35,7 +35,7 @@ public class Driver {
 			case "firefox":
 				driver= new FirefoxDriver();
 				break;
-			case "firefox- headless":
+			case "firefox-headless":
 				FirefoxOptions firefoxOptions= new FirefoxOptions();
 				firefoxOptions.addArguments("--headless");
 				break;
