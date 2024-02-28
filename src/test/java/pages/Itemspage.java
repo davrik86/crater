@@ -70,8 +70,8 @@ public class Itemspage {
     @FindBy (xpath = "//h3[text()='Items']")
 	public WebElement items_items_text;
 
-    
-    
+    @FindBy (xpath="//p[text()='Succes!']")
+	public WebElement itemsPageSuccessmsg;
 }
 
 

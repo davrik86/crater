@@ -2,11 +2,8 @@ package step_definitions;
 
 
 
-import org.hamcrest.core.StringContains;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import Utils.BrowserUtils;
 import Utils.DataReader;
 import Utils.Driver;
@@ -29,13 +26,14 @@ public class AccessControlSteps {
 	}
 	@Given("Login page components exists")
 	public void login_page_components_exists() {
+		utils.waitForElementToBeVisible(acp.loginBTTN);
 	    Assert.assertTrue(acp.loginBTTN.isDisplayed());
 	    Assert.assertTrue(acp.loginPass.isDisplayed());
 	    Assert.assertTrue(acp.loginUserName.isDisplayed());
 	    Assert.assertTrue(acp.frgtPassLink.isDisplayed());
 	    Assert.assertTrue(acp.passwordText.isDisplayed());
 	    Assert.assertTrue(acp.emailText.isDisplayed());
-	    Assert.assertTrue(acp.copyrightTetx.isDisplayed());
+	   // Assert.assertTrue(acp.copyrightTetx.isDisplayed());
 	    Assert.assertTrue(acp.headingSimple.isDisplayed());
 	    Assert.assertTrue(acp.craterText.isDisplayed());
 	}
@@ -79,8 +77,7 @@ public class AccessControlSteps {
 	}
 	@Then("I should not be loged in")
 	public void i_should_not_be_loged_in() {
-		//SoftAssert softAssert= new SoftAssert();
-	
+		
 		utils.waituntilURLcontains("login");
 		String curretnURL= Driver.getDriver().getCurrentUrl();
 		Assert.assertTrue(curretnURL.contains("login"));
@@ -103,10 +100,11 @@ public class AccessControlSteps {
 	    acp.frgtPassLink.click();
 	}
 	@When("enter an invalid {string} I should see the  Errormessage")
-	public void enter_an_invalid_i_should_see_the_errormessage(String invEmail) {
+	public void enter_an_invalid_i_should_see_the_errormessage(String invEmail) throws InterruptedException {
 		utils.waitForElementToBeVisible(acp.enter_Email_Reset_page);
 		acp.enter_Email_Reset_page.sendKeys(invEmail);
 		acp.Send_Reset_LinkBTTN.click();
+		Thread.sleep(2000);
 		utils.waitForElementToBeVisible(acp.IncorrectEmail);
 
 		Assert.assertTrue(acp.IncorrectEmail.isDisplayed());

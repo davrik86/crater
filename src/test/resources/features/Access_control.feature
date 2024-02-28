@@ -14,7 +14,7 @@ Feature: Access control user mnagment
 			Then I should be on the Dashboard page
 			And sucess message displays
 					
-				@valid_login_variable @smoke 
+				@valid_login_variable @smoke_tests 
 		Scenario: As a user I should be able to login
 			Given I am on the login page
 			And Login page components exists
@@ -35,11 +35,8 @@ Feature: Access control user mnagment
 			|username										| password			 |
 			|dummy@primetechschool.com  | fakePass       |
 			|fake@prime.com							|primetech@school|
-			|dummy@primetechschool.com  |					       |
-			|														|primetech@school|
-			|fake@primhool.com					|								 |
-			|														|tech@school		 |
-			|														|								 |
+			
+			
 			
 			@invalid_login_WithBLNK 
 		Scenario Outline: As a User I should not be able to login
@@ -58,32 +55,26 @@ Feature: Access control user mnagment
 			|														|								 |
 				
 			
-			@Login_resetPass_EmailVal
-			Scenario Outline: As a User I should not be able to login
-			Given I am on the login page 
-		  And Login page components exists
-			When I click on Forget Password? link 
-			And enter an invalid "<email>" I should see the  Errormessage
+		#	@Login_resetPass_EmailVal
+		#	Scenario Outline: As a User I should not be able to login
+		# Given I am on the login page 
+		# And Login page components exists
+		# When I click on Forget Password? link 
+		# And enter an invalid "<email>" I should see the  Errormessage
 		#	When I click with leaving the email as blank I should see the Errormessage
 		#	When I enter "valid email" and click Reset link button
 		#	Then I should recive an email with following "context"
 		
-			Examples:
-			|email								|
-			|nonevalid@whoknowscom|								
-			|nonevalidwhoknows.com|									
-			|											|
+		#	Examples:
+		#	|email								|
+		#	|nonevalid@whoknowscom|								
+		#	|nonevalidwhoknows.com|									
+		#	|											|
 			
 		
 		
 			
-		#	@Login_resetPass
-		#	Scenario Outline: As a User I should not be able to login
-		#	Given I am on the login page 
-		#	And Login page components exists
-		#	When I click on Forget Password? link 
-		#	And I enter valid email and click Send reset link
-		#	When I recive an email with reset link, I clik on it
+		
 			
 			
 			

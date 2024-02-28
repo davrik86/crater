@@ -31,7 +31,7 @@ public class CraterLoginPage {
 	@FindBy (xpath="//div[contains(text(),\"Password\")]")
 	public WebElement passwordText;
 	
-	@FindBy (xpath="//p[contains(text(),\"Copyright \")]")
+	@FindBy (xpath="//p[contains(text(), 'Copyright')]")
 	public WebElement copyrightTetx;
 	
 	@FindBy (xpath="//h1[text()='Simple Invoicing for Individuals Small Businesses']")
