@@ -107,17 +107,10 @@ public class AccessControlSteps {
 		utils.waitForElementToBeVisible(acp.enter_Email_Reset_page);
 		acp.enter_Email_Reset_page.sendKeys(invEmail);
 		acp.Send_Reset_LinkBTTN.click();
-//		utils.waitForElementToBeVisible(acp.IncorrectEmail);
-		if(acp.IncorrectEmail.getText().contains("Incorrect Email.")) {
-			Assert.assertTrue(acp.IncorrectEmail.isDisplayed());
-		}
-		if(acp.fieldIsRequiered.getText().contains("Field is required")) {
-			Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
-		}
-		
-		
-//		Assert.assertTrue(acp.IncorrectEmail.isDisplayed());
-//		Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
+		utils.waitForElementToBeVisible(acp.IncorrectEmail);
+
+		Assert.assertTrue(acp.IncorrectEmail.isDisplayed());
+		Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
 	}	  
 	
 	@When("I click with leaving  the email as blank I should see the  Errormessage")
