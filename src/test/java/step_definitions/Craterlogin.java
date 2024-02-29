@@ -57,7 +57,7 @@ public class Craterlogin {
 	@Then("I should be on item input page")
 	public void i_should_be_on_item_input_page() throws InterruptedException {
 		utils.waitForElementToBeVisible(item.itemName);
-		//Thread.sleep(4000);
+		
 		System.out.println("THIS IS THE TITIEL : "+ item.itemPage.getText());
 	}
 
@@ -68,7 +68,7 @@ public class Craterlogin {
 		item.itemName.sendKeys(name);
 		
 		item.itemUnit.sendKeys(unit);
-	//	Thread.sleep(500);
+	
 		item.itemUnit.sendKeys(Keys.ENTER);
 		item.itemPrice.sendKeys(price);
 		item.itemDiscription.sendKeys(description);
@@ -88,15 +88,9 @@ public class Craterlogin {
 
 	@Then("I delete the item")
 	public void i_delete_the_item() throws InterruptedException {
-	//	Thread.sleep(2000);
+	
 		utils.waitForElementToBeVisible(item.itemCheckbox);
-//		
-//		List<WebElement> tableEleme= Driver.getDriver().findElements(By.xpath("//div[contains(@class,\"relative table-container\")]"));
-//		WebElement singleItem =Driver.getDriver().findElement(By.xpath("//a[text()=\"White Coffee\"]"));
-//		for ( WebElement items: tableEleme) {
-//		while(items.getText().contains("White Coffee")) {
-			//if (items.getText().contains("White Coffee")) {
-			//	System.out.println(items.getText());
+
 				item.item3Dots.click();
 				utils.waitForElementToBeVisible(item.deliteBtn);
 				act.moveToElement(item.deliteBtn).perform();
@@ -104,28 +98,10 @@ public class Craterlogin {
 				utils.waitForElementToBeVisible(item.alertOkBtn);
 				item.alertOkBtn.click();
 			}
-		//else {
-				//System.out.println("No more match found");
-//			}
-//		}
-		
-//		List<WebElement> rows= item.table.findElements(By.tagName("tr"));
-//		for (WebElement row: rows) {
-//		WebElement cell = row.findElement(By.linkText("itemName"));
-//		if (cell.getText().contains("itemName")) {
-//			WebElement Elbutton= row.findElement(By.xpath("//button[contains(@id,\"headlessui-menu-button-5\")]"));
-//			Elbutton.click();
-//			utils.waitForElementToBeVisible(item.deliteBtn);
-//			act.moveToElement(item.deliteBtn).perform();
-//			item.deliteBtn.click();
-//			utils.waitForElementToBeVisible(item.alertOkBtn);
-//			item.alertOkBtn.click();
-//		}
-//	
-//		
-//		}
+	
+
 	}
 		
-//		}
+
 
 

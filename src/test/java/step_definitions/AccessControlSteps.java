@@ -83,6 +83,7 @@ public class AccessControlSteps {
 		Assert.assertTrue(curretnURL.contains("login"));
 		utils.waitForElementToBeVisible(acp.Error);
 		Assert.assertTrue(acp.Error.isDisplayed());
+		
 	}
 	
 	@When("I enter invalid {string} and invalid {string} including blank option")
@@ -104,7 +105,7 @@ public class AccessControlSteps {
 		utils.waitForElementToBeVisible(acp.enter_Email_Reset_page);
 		acp.enter_Email_Reset_page.sendKeys(invEmail);
 		acp.Send_Reset_LinkBTTN.click();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		utils.waitForElementToBeVisible(acp.IncorrectEmail);
 
 		Assert.assertTrue(acp.IncorrectEmail.isDisplayed());
