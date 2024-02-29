@@ -55,21 +55,21 @@ Feature: Access control user mnagment
 			|														|								 |
 				
 			
-		#	@Login_resetPass_EmailVal
-		#	Scenario Outline: As a User I should not be able to login
-		# Given I am on the login page 
-		# And Login page components exists
-		# When I click on Forget Password? link 
-		# And enter an invalid "<email>" I should see the  Errormessage
-		#	When I click with leaving the email as blank I should see the Errormessage
-		#	When I enter "valid email" and click Reset link button
-		#	Then I should recive an email with following "context"
+		@Login_resetPass_EmailVal
+			Scenario Outline: As a User I should not be able to login
+			 Given I am on the login page 
+			 And Login page components exists
+			 When I click on Forget Password? link 
+			 And enter an invalid "<email>" I should see the  Errormessage
+			 When I click with leaving the email as blank I should see the Errormessage
+		  # When I enter "valid email" and click Reset link button
+		  # Then I should recive an email with following "context"
 		
-		#	Examples:
-		#	|email								|
-		#	|nonevalid@whoknowscom|								
-		#	|nonevalidwhoknows.com|									
-		#	|											|
+			Examples:
+			|email								|
+			|nonevalid@whoknowscom|								
+			|nonevalidwhoknows.com|									
+			|											|
 			
 		
 		
