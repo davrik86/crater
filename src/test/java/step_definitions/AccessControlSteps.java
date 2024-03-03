@@ -33,7 +33,7 @@ public class AccessControlSteps {
 	    Assert.assertTrue(acp.frgtPassLink.isDisplayed());
 	    Assert.assertTrue(acp.passwordText.isDisplayed());
 	    Assert.assertTrue(acp.emailText.isDisplayed());
-	   // Assert.assertTrue(acp.copyrightTetx.isDisplayed());
+	    Assert.assertTrue(acp.copyrightTetx.isDisplayed());
 	    Assert.assertTrue(acp.headingSimple.isDisplayed());
 	    Assert.assertTrue(acp.craterText.isDisplayed());
 	}

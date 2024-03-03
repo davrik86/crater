@@ -72,6 +72,10 @@ public class Itemspage {
 
     @FindBy (xpath="//p[text()='Succes!']")
 	public WebElement itemsPageSuccessmsg;
+    
+    @FindBy (xpath ="//nav[1]//ol")
+    public WebElement HomeItemtext;
+    
 }
 
 
