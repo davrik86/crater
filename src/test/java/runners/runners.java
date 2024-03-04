@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 				"json:reports/cucumber_results.json"},
 		features="src/test/resources/features",
 		glue="step_definitions",//it is in the same class as runners class its json format
-		tags="@update_items",
+		tags="@validate_Items_page_comp",
 		dryRun= true// this is run without running the browser
 		)
 

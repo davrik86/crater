@@ -80,11 +80,30 @@ public class BrowserUtils {
 	}
 	
 	// this method generate 3 digit random number
-		public int randomNumber() {
+	public int randomNumber() {
 			Random rand = new Random();
 			int randomNum = rand.nextInt((999 - 100) + 1) + 100;
 			return randomNum;
 		}
+	public String randomString() {
+		// Create a new Random object
+        Random random = new Random();
+
+        // Create a new StringBuilder object
+        StringBuilder sb = new StringBuilder();
+
+        // Generate 50 random characters and append them to the StringBuilder object
+        for (int i = 0; i < 54; i++) {
+            int randomInt = random.nextInt(50); // Generate a random number between 0 and 25
+            char randomChar = (char) (randomInt + 'a'); // Convert the random number to a character
+            sb.append(randomChar);
+        }
+
+        // Convert the StringBuilder object to a String object
+        String randomString = sb.toString();
+        return  randomString;
+	}
+		
 		// js executer highlight 
 	public void highlightElement(WebElement element) throws InterruptedException {
 		js=(JavascriptExecutor)Driver.getDriver();

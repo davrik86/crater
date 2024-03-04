@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 				"json:reports/cucumber_results.json"},
 		features="src/test/resources/features",
 		glue="step_definitions",//it is in the same class as runners class its json format
-		tags="@valid_login"
+		tags="@validate_Items_page_comp"
 		
 		
 		)
@@ -20,3 +20,4 @@ import io.cucumber.junit.CucumberOptions;
 public class TestRunner {
 
 }
+	

@@ -3,7 +3,7 @@ Feature: Item Management
 
 
 
-	@create_items @smoke_tests
+	@create_items_page @smoke_tests
 	Scenario: As a user, I am able to create an item or service
 		Given As a "level1" user, I am loged in
 		And I navigate to Items page
@@ -13,6 +13,19 @@ Feature: Item Management
 		And I click on Save item button
 		Then The item is added to the item list table
 		And  I delete the created item
+	
+	@validate_Items_page_comp
+	Scenario: Validate Items page components
+		Given As a "level1" user, I am loged in
+		And I navigate to Items page
+		Then I should be able to see  page titled “Items” and menu navigation path as “Home / Items”
+		And there should be two buttons with Filter and + AddItem sign on them
+		And table with Select All checkbox, NAME, UNIT, PRICE,ADDED ON
+		Then A link icon showing three dots with the following options: Edit with an edit icon, Delete with a delete icon.
+		And I should see Pagination navigation with the following controls
+
+
+
 		
 	@update_items @smoke_tests
 	Scenario: As a user, I am able to create an item or service
@@ -24,5 +37,5 @@ Feature: Item Management
 		And I click on Save item button
 		Then The item is added to the item list table
 		When I update the item price with "1500"
-		Then The item is added to the item list table
+		Then an item is added to the item list table
 		And  I delete the created item
