@@ -1,6 +1,4 @@
-package pages;
-
-import java.util.List;
+	package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -71,5 +69,9 @@ public class CraterItems {
 	
 	@FindBy (xpath="//h3[text()='Edit Item']")
     public WebElement editPage;
+	
+	@FindBy (xpath ="//nav[1]//ol")
+    public WebElement homeItemtext;
+    
 	
 }

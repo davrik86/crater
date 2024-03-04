@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.Random;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -40,7 +42,7 @@ public class Itemspage {
     @FindBy (xpath = "//input[@name='name']")
     public WebElement items_page_filter_name_box;
     
-    @FindBy (xpath = "(//button[contains(@id, 'headlessui-menu-button')])[3]")
+    @FindBy (xpath = "(//td[contains(@class,'px-6 py-4 text-sm text-gray-500')]//button")
     public WebElement items_page_3dot_menu;
     
     @FindBy (xpath = "//a[text()=' Edit']")
@@ -74,7 +76,82 @@ public class Itemspage {
 	public WebElement itemsPageSuccessmsg;
     
     @FindBy (xpath ="//nav[1]//ol")
-    public WebElement HomeItemtext;
+    public WebElement home_Itemtext;
+    
+    @FindBy (xpath="//button[text()=' Add Item']")
+    public WebElement AddItemBTTN;
+    
+    @FindBy (xpath="//th[text()='Unit ']")
+    public  WebElement TableUnit;
+    
+    @FindBy (xpath="//th[text()='Name ']")
+    public  WebElement TableName;
+    
+    @FindBy (xpath="//th[text()='Price ']")
+    public  WebElement TablePrice;
+    
+    @FindBy (xpath="//th[text()='Added On ']")
+    public  WebElement Table_Add_On;
+    
+    @FindBy (xpath="//div[@variant='primary']")
+    public  WebElement Table_Check_All_box;
+    
+    @FindBy (xpath="//button[@id='headlessui-menu-button-5']//*[name()='svg']")
+    public WebElement Table_3Dot;
+    
+    @FindBy (xpath="//p[@class='text-sm text-gray-700']")
+    public WebElement PaginationTxt;
+    
+    @FindBy (xpath="//span[normalize-space()='Next']")
+    public WebElement Pagination_Next_BTTN;
+    
+    @FindBy (xpath="//a[contains(normalize-space(),'9')]")
+    public WebElement Pagination_last_numberBTTN;
+    
+    @FindBy (xpath="//span[text()='Previous']")
+    public WebElement Pagination_Previous;
+    
+    @FindBy (xpath="//span[text()='1']")
+    public WebElement Pagination_1stpage;
+    
+    @FindBy (xpath="//a[contains(@class,'disabled cursor')]//span")
+    public WebElement Pagination_DisLeft;
+    
+    @FindBy (xpath="//nav")
+    public WebElement newItemHoTeNewIt;
+    
+    @FindBy (xpath="//a[text()='Home']")
+    public WebElement newItemHOMEtxt;
+    
+    @FindBy (xpath="//a[text()='Items']")
+    public WebElement newItemITEMtxt;
+    
+    @FindBy (xpath="//a[text()='New Item']")
+    public WebElement newItemNEWItemtxt;
+    
+    @FindBy (xpath="//div[contains(text(),'Name ')]")
+    public WebElement newItemNameTab;
+    
+    @FindBy (xpath="//div[contains(text(),'Price')]")
+    public WebElement newItemPriceTab;
+    
+    @FindBy (xpath="//div[contains(text(),'Description ')]")
+    public WebElement newItemDescriptionTab;
+        
+    @FindBy (xpath="//div[contains(text(),'Unit')]")
+    public WebElement newItemPriceUnit;
+    
+    
+  
+      
+     
+    
+    
+    
+    
+    
+    
+    
     
 }
 
