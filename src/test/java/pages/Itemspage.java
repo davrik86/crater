@@ -105,7 +105,7 @@ public class Itemspage {
     @FindBy (xpath="//span[normalize-space()='Next']")
     public WebElement Pagination_Next_BTTN;
     
-    @FindBy (xpath="//a[contains(normalize-space(),'9')]")
+    @FindBy (xpath="//a[contains(@class,'bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 text-sm font-medium border')]")
     public WebElement Pagination_last_numberBTTN;
     
     @FindBy (xpath="//span[text()='Previous']")

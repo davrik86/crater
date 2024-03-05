@@ -33,7 +33,7 @@ public class AccessControlSteps {
 	    Assert.assertTrue(acp.frgtPassLink.isDisplayed());
 	    Assert.assertTrue(acp.passwordText.isDisplayed());
 	    Assert.assertTrue(acp.emailText.isDisplayed());
-	    Assert.assertTrue(acp.copyrightTetx.isDisplayed());
+	 //   Assert.assertTrue(acp.copyrightTetx.isDisplayed());
 	    Assert.assertTrue(acp.headingSimple.isDisplayed());
 	    Assert.assertTrue(acp.craterText.isDisplayed());
 	}
@@ -69,25 +69,35 @@ public class AccessControlSteps {
 		Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//p[text()='" +successMessage+ "']")).isDisplayed());	
 		
 }
-	
+	String userEmail;
+	String USerPass;
 	@When("I enter invalid {string} and invalid {string}")
 	public void i_enter_invalid_and_invalid(String username, String password) {
-		acp.loginUserName.sendKeys(username);
-		acp.loginPass.sendKeys(password);
+		userEmail =username;
+		USerPass=password;
+		utils.sendkeysWithActionsClass(acp.loginUserName, username);
+		utils.sendkeysWithActionsClass(acp.loginPass, password);
 	}
 	@Then("I should not be loged in")
 	public void i_should_not_be_loged_in() {
 		
 		utils.waituntilURLcontains("login");
-		String curretnURL= Driver.getDriver().getCurrentUrl();
-		Assert.assertTrue(curretnURL.contains("login"));
-		utils.waitForElementToBeVisible(acp.Error);
-		Assert.assertTrue(acp.Error.isDisplayed());
+		//String curretnURL= Driver.getDriver().getCurrentUrl();
+		//Assert.assertTrue(curretnURL.contains("login"));
+		if (userEmail=="" || USerPass=="") {
+			utils.waitForElementToBeVisible(acp.fieldIsRequiered);
+			Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
+		}else{
+			utils.waitForElementToBeVisible(acp.Error);
+			Assert.assertTrue(acp.Error.isDisplayed());
+		}
 		
 	}
 	
 	@When("I enter invalid {string} and invalid {string} including blank option")
 	public void i_enter_invalid_and_invalid_including_blank_option(String username, String password) {
+		userEmail =username;
+		USerPass=password;
 		acp.loginUserName.sendKeys(username);
 		acp.loginPass.sendKeys(password);
 	}

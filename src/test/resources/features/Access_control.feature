@@ -35,7 +35,10 @@ Feature: Access control user mnagment
 			|username										| password			 |
 			|dummy@primetechschool.com  | fakePass       |
 			|fake@prime.com							|primetech@school|
-			|faker.com									|whatever				 |
+			|														|								 |
+			|														|primetech@school|
+			|fake@primhool.com					|								 |
+			|														|tech@school		 |
 			
 			
 			@invalid_login_WithBLNK 
