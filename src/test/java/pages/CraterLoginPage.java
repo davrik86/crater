@@ -18,17 +18,17 @@ public class CraterLoginPage {
 	}
 	
 	//username field
-	@FindBy (xpath="//input[@name=\"email\"]")
+	@FindBy (xpath="//input[@name='email']")
 	public WebElement loginUserName;
 	
-	@FindBy (xpath="//div[contains(text(),\"Email\")]")
+	@FindBy (xpath="//div[contains(text(),'Email')]")
 	public WebElement emailText;
 	
 	//password field
-	@FindBy (xpath="//input[@name=\"password\"]")
+	@FindBy (xpath="//input[@name='password']")
 	public WebElement loginPass;
 	
-	@FindBy (xpath="//div[contains(text(),\"Password\")]")
+	@FindBy (xpath="//div[contains(text(),'Password')]")
 	public WebElement passwordText;
 	
 	@FindBy (xpath="//p[contains(text(), 'Copyright')]")
@@ -41,7 +41,7 @@ public class CraterLoginPage {
 	public WebElement craterText;
 	
 	//login button
-	@FindBy (xpath="//button[@type=\"submit\"]")
+	@FindBy (xpath="//button[@type='submit']")
 	public WebElement loginBTTN;
 	
 	@FindBy (linkText ="Forgot Password?" )
@@ -54,7 +54,7 @@ public class CraterLoginPage {
 	public WebElement loginSuccsessful_message;
 	
 	@FindBy (xpath="//p[text()='Succes!']")
-	public WebElement loginError;
+	public WebElement loginSucces;
 	
 	@FindBy (xpath="//p[text()='Error']")
 	public WebElement Error;		

@@ -141,10 +141,32 @@ public class Itemspage {
     @FindBy (xpath="//div[contains(text(),'Unit')]")
     public WebElement newItemPriceUnit;
     
-    
+    @FindBy (xpath="//p[text()='Item created successfully']")
+    public WebElement item_created_Succ;
   
-      
-     
+    @FindBy (xpath="//tbody/tr[1]/td[2]")
+     public WebElement items_table_name;
+    
+    @FindBy (xpath="//tbody/tr[1]/td[3]")
+    public WebElement items_table_unit;
+    
+    @FindBy (xpath="//tbody/tr[1]/td[4]")
+    public WebElement items_table_price;
+    
+    @FindBy (xpath="//tbody/tr[1]/td[1]//input")
+    public WebElement items_table_single_Checkbox;
+    
+    @FindBy (xpath="//div[@class='flex items-center h-5']//input")
+    public WebElement items_table_ALL_Checkbox;
+    
+    @FindBy (xpath="//span[text()='Actions ']")
+    public WebElement Acctions_BTTN;
+    
+    @FindBy (xpath="//h3[text()='Are you sure?']")
+    public WebElement Delite_message_Are_you_sure;
+    
+    @FindBy (xpath="//p[text()='You will not be able to recover these Items']")
+    public WebElement Delite_message_You_Will_not_be;
     
     
     

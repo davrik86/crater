@@ -85,7 +85,7 @@ public class BrowserUtils {
 			int randomNum = rand.nextInt((999 - 100) + 1) + 100;
 			return randomNum;
 		}
-	public String randomString() {
+	public String randomString(int numberof_charecters) {
 		// Create a new Random object
         Random random = new Random();
 
@@ -93,8 +93,8 @@ public class BrowserUtils {
         StringBuilder sb = new StringBuilder();
 
         // Generate 50 random characters and append them to the StringBuilder object
-        for (int i = 0; i < 54; i++) {
-            int randomInt = random.nextInt(50); // Generate a random number between 0 and 25
+        for (int i = 0; i < numberof_charecters; i++) {
+            int randomInt = random.nextInt(numberof_charecters); // Generate a random number between 0 and 25
             char randomChar = (char) (randomInt + 'a'); // Convert the random number to a character
             sb.append(randomChar);
         }
