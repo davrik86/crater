@@ -17,7 +17,7 @@ public Dashboard() {
 	@FindBy (xpath="//span[text()='Amount Due']")
 	public WebElement dashbordAmountDue;
 	
-	@FindBy (xpath="//a[@href='/admin/items']")
+	@FindBy (xpath="//a[text()=' Items']")
 	public WebElement itemTab;
 
 

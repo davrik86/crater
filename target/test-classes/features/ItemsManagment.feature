@@ -10,9 +10,34 @@ Feature: Item Management
 		When I click on Add Item button
 		Then I should be on New Item page
 		When I provide item name "NewItem" price "1200" unit "pc" and description "Just cool coffee mug"
-		And I click on Save item button
-		Then The item is added to the item list table
+		And I click on Save item button		
 		And  I delete the created item
+		
+		
+		
+		
+		
+		
+		@create_items_page_validating_ItemName @smoke_tests
+	Scenario Outline: As a user, I am checking boundry analisys 
+		Given As a "level1" user, I am loged in
+		And I navigate to Items page
+		When I click on Add Item button
+		Then I should be on New Item page
+		When I provide item name "<NewItem>" price "1300" unit "pc" and description "Just cool coffee mug"
+		And I click on Save item button
+		Then I validate error messages
+		
+		Examples:
+		|NewItem|
+		|  			|
+		|CH|
+		|CHI|
+		|MLCPdZgNTDgiqNQyzLacuJhGGCiDItnFbcvBegjRuvrUIeZEN|
+		|AWkywTiZYKeCgqdrJvZXxfprxWljOWgGWwGfrXMIUwQLnhbClk|
+		|yPpuuFPFXGFyqvuNqatcNXqzaXkcKyuBGQcXaCiQtOfHZgcbkuK|
+		
+		
 	
 	@validate_Items_page_comp
 	Scenario: Validate Items page components

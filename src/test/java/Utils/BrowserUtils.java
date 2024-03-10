@@ -2,11 +2,16 @@ package Utils;
 
 import java.awt.datatransfer.StringSelection;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByTagName;
+import org.openqa.selenium.By.ByXPath;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -78,13 +83,26 @@ public class BrowserUtils {
 		select = new Select(x);
 		select.selectByVisibleText(value);
 	}
-	
+	//this method works to get dropdown options to a List array
+	public  List<String> addWebEltoList(WebElement dropdown, WebElement the_list) {
+		dropdown.click();
+		
+        List<WebElement> options = select.getOptions();
+        List<String> values = new ArrayList<>();
+        for (WebElement option : options) {
+            values.add(option.getText());
+        }
+        return values;
+		
+		
+	}
 	// this method generate 3 digit random number
 	public int randomNumber() {
 			Random rand = new Random();
 			int randomNum = rand.nextInt((999 - 100) + 1) + 100;
 			return randomNum;
 		}
+	//this method for creating random characters
 	public String randomString(int numberof_charecters) {
 		// Create a new Random object
         Random random = new Random();
@@ -104,6 +122,11 @@ public class BrowserUtils {
         return  randomString;
 	}
 		
+	
+	
+	
+	
+	
 		// js executer highlight 
 	public void highlightElement(WebElement element) throws InterruptedException {
 		js=(JavascriptExecutor)Driver.getDriver();
@@ -136,7 +159,21 @@ public class BrowserUtils {
 	public  String GetMsgALert(WebDriver driver) {
 		alert= driver.switchTo().alert();
 		return alert.getText();
-	}	
+	}
+	//you must click on web element before	
+
+	public int dropdown_items_size(String path) {
+	
+		WebElement optionsCont= Driver.getDriver().findElement(By.xpath(path));
+		List<WebElement> names= optionsCont.findElements(By.tagName("li"));
+		int size= names.size();
+		System.out.println("The number of options in dropdown is " + size);
+	
+	return size;
+	}
+	//compare values of two elements
+	
+	
 }
 
 

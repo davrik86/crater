@@ -42,7 +42,7 @@ public class Itemspage {
     @FindBy (xpath = "//input[@name='name']")
     public WebElement items_page_filter_name_box;
     
-    @FindBy (xpath = "(//td[contains(@class,'px-6 py-4 text-sm text-gray-500')]//button")
+    @FindBy (xpath = "//tbody/tr[1]/td[6]//button")
     public WebElement items_page_3dot_menu;
     
     @FindBy (xpath = "//a[text()=' Edit']")
@@ -168,10 +168,11 @@ public class Itemspage {
     @FindBy (xpath="//p[text()='You will not be able to recover these Items']")
     public WebElement Delite_message_You_Will_not_be;
     
+    @FindBy (xpath="//span[text()='Name must have at least 3 letters.']")
+    public WebElement new_item_name_field_Name_must;
     
-    
-    
-    
+    @FindBy (xpath="//span[text()='Item Name incorrect']")
+    public WebElement new_item_name_field_Name_Item_Name_incorrect;
     
     
     

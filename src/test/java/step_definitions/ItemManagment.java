@@ -122,12 +122,12 @@ public class ItemManagment {
 	@When("I provide item name {string} price {string} unit {string} and description {string}")
 	public void i_provide_item_name_price_unit_and_description(String item_name, String item_price, String item_unit,
 			String item_des) {
-		itemname = utils.randomString(5);
+		itemname = item_name;
 		itemPrice = item_price;
 		itemunit = item_unit;
-		item_des = utils.randomString(12);
+		item_des = utils.randomString(200);
 		utils.waitForElementToBeVisible(itPage.items_input_page_price_box);
-		utils.sendkeysWithActionsClass(itemsPage.itemName, itemname);
+		utils.sendkeysWithActionsClass(itemsPage.itemName, item_name);
 		utils.sendkeysWithActionsClass(itemsPage.itemPrice, item_price);
 		System.out.println(item_des);
 		utils.sendkeysWithActionsClass(itemsPage.itemUnit, item_unit + Keys.ENTER);
@@ -139,6 +139,18 @@ public class ItemManagment {
 	public void i_click_on_save_item_button() {
 		itemsPage.itemSaveBttn.click();
 		utils.waituntilURLcontains("items");
+	}
+	@Then("I validate error messages")
+	public void i_validate_error_messages() {
+	    if (itemname=="") {
+	    	Assert.assertTrue(clp.fieldIsRequiered.isDisplayed());
+	    }
+	    else if(itemname.length()<3) {
+	    	Assert.assertTrue(itPage.new_item_name_field_Name_must.isDisplayed());
+	    }
+	    else if(itemname.length()>50){
+	    	Assert.assertTrue(itPage.new_item_name_field_Name_Item_Name_incorrect.isDisplayed());
+	    }
 	}
 
 	@Then("an item is added to the item list table")
