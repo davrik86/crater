@@ -42,7 +42,7 @@ public class Itemspage {
     @FindBy (xpath = "//input[@name='name']")
     public WebElement items_page_filter_name_box;
     
-    @FindBy (xpath = "(//td[contains(@class,'px-6 py-4 text-sm text-gray-500')]//button")
+    @FindBy (xpath = "//tbody/tr[1]/td[6]//button")
     public WebElement items_page_3dot_menu;
     
     @FindBy (xpath = "//a[text()=' Edit']")
@@ -105,7 +105,7 @@ public class Itemspage {
     @FindBy (xpath="//span[normalize-space()='Next']")
     public WebElement Pagination_Next_BTTN;
     
-    @FindBy (xpath="//a[contains(normalize-space(),'9')]")
+    @FindBy (xpath="//a[contains(@class,'bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 text-sm font-medium border')]")
     public WebElement Pagination_last_numberBTTN;
     
     @FindBy (xpath="//span[text()='Previous']")
@@ -141,15 +141,38 @@ public class Itemspage {
     @FindBy (xpath="//div[contains(text(),'Unit')]")
     public WebElement newItemPriceUnit;
     
-    
+    @FindBy (xpath="//p[text()='Item created successfully']")
+    public WebElement item_created_Succ;
   
-      
-     
+    @FindBy (xpath="//tbody/tr[1]/td[2]")
+     public WebElement items_table_name;
     
+    @FindBy (xpath="//tbody/tr[1]/td[3]")
+    public WebElement items_table_unit;
     
+    @FindBy (xpath="//tbody/tr[1]/td[4]")
+    public WebElement items_table_price;
     
+    @FindBy (xpath="//tbody/tr[1]/td[1]//input")
+    public WebElement items_table_single_Checkbox;
     
+    @FindBy (xpath="//div[@class='flex items-center h-5']//input")
+    public WebElement items_table_ALL_Checkbox;
     
+    @FindBy (xpath="//span[text()='Actions ']")
+    public WebElement Acctions_BTTN;
+    
+    @FindBy (xpath="//h3[text()='Are you sure?']")
+    public WebElement Delite_message_Are_you_sure;
+    
+    @FindBy (xpath="//p[text()='You will not be able to recover these Items']")
+    public WebElement Delite_message_You_Will_not_be;
+    
+    @FindBy (xpath="//span[text()='Name must have at least 3 letters.']")
+    public WebElement new_item_name_field_Name_must;
+    
+    @FindBy (xpath="//span[text()='Item Name incorrect']")
+    public WebElement new_item_name_field_Name_Item_Name_incorrect;
     
     
     
