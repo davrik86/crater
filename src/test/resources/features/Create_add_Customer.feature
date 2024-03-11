@@ -1,3 +1,4 @@
+@regression
 Feature:
 
 Background:
@@ -9,7 +10,11 @@ Background:
 		Then I validate reqiered Customers Page UI components
 		And I should see Pagination navigation with the following controls
 	# Table, 3dot, Filter, New Customer 
-	
+
+@portal_Access
+	Scenario: As user I should be able to use Portal acces function
+		Given user is in New Customer page and can fill 
+		I 
 	
 @add_Customer_UI_comp
 	Scenario Outline: As a user I can fill out New Customer page
@@ -27,3 +32,18 @@ Examples:
 |		50	 |125	 |	5		|	10  |			50				|			100 	|
 |		51	 |126	 |	6		|	11	|			51				|		101			|
 
+
+
+@validate_customer_data_saved
+	Scenario Outline: As a user I can fill out New Customer page
+		Then I should be directed to the page to validate Basic Info UI components
+		And I click to +NewCustomer button
+		And Validate Basic informatio address UI components with "<Name_val>", "<Email>" "<zip>" "<phone>" "<Primary_Contact>"
+		Then Validate Shipping and Billing address UI components "<Name_val>", "<Address_ST>" "<zip>" "<phone>"
+		And As user I should be navigated to Sales page
+		Then User should see entered data and Success message
+		And  User data can be viewd using filter
+		
+		
+		
+		

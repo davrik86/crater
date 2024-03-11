@@ -33,7 +33,7 @@ public class AccessControlSteps {
 	    Assert.assertTrue(acp.frgtPassLink.isDisplayed());
 	    Assert.assertTrue(acp.passwordText.isDisplayed());
 	    Assert.assertTrue(acp.emailText.isDisplayed());
-	 //   Assert.assertTrue(acp.copyrightTetx.isDisplayed());
+//	    Assert.assertTrue(acp.copyrightTetx.isDisplayed());
 	    Assert.assertTrue(acp.headingSimple.isDisplayed());
 	    Assert.assertTrue(acp.craterText.isDisplayed());
 	}
@@ -81,9 +81,8 @@ public class AccessControlSteps {
 	@Then("I should not be loged in")
 	public void i_should_not_be_loged_in() {
 		
-		utils.waituntilURLcontains("login");
-		//String curretnURL= Driver.getDriver().getCurrentUrl();
-		//Assert.assertTrue(curretnURL.contains("login"));
+//		utils.waituntilURLcontains("login"); does not work with firefox
+		utils.waitForElementToBeVisible(acp.loginUserName);
 		if (userEmail=="" || USerPass=="") {
 			utils.waitForElementToBeVisible(acp.fieldIsRequiered);
 			Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
@@ -103,7 +102,7 @@ public class AccessControlSteps {
 	}
 	@Then("I should not be loged in\\(using blank)")
 	public void i_should_not_be_loged_in_using_blank() {
-		utils.waituntilURLcontains("login");
+		utils.waitForElementToBeVisible(acp.loginUserName);
 		Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
 	}
 	@When("I click on Forget Password? link")
