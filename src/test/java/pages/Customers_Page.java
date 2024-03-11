@@ -153,17 +153,17 @@ public class Customers_Page {
 				utils.waitForElementToBeVisible(Error_fieldIsRequiered);
 				Assert.assertTrue(Error_fieldIsRequiered.isDisplayed());	
 			}else if (scenario_variable>0 &&scenario_variable<3){
-				String  message= utils.randomString(scenario_variable);
+				String  message= utils.RandomStringGen(scenario_variable);
 				new_customer_SaveCust_BTTN.click();
 				tgtEliment.sendKeys(message);
 				utils.waitForElementToBeVisible(Error_field_Name_must);
 				Assert.assertTrue(Error_field_Name_must.isDisplayed());			
 			}else if(scenario_variable>50) {
-				String  message= utils.randomString(scenario_variable);				
+				String  message= utils.RandomStringGen(scenario_variable);		
 				tgtEliment.sendKeys(message);				
 				System.out.println("Name must be less than 50 characters");
 			}else if(scenario_variable<50) {
-				String  message= utils.randomString(scenario_variable);				
+				String  message= utils.RandomStringGen(scenario_variable);			
 				tgtEliment.sendKeys(message);		
 			}
 		}
