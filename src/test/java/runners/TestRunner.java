@@ -7,17 +7,15 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin= {"pretty",
+		plugin= {"pretty", 
 				"html:reports/cucumber_results.html",
-				"json:reports/cucumber_results.json"},
-		features="src/test/resources/features",
-		glue="step_definitions",//it is in the same class as runners class its json format
-		tags="@add_Customer_UI_comp"
-		
-		
+				"json:reports/cucumber_results.json"
+				},
+		features="./src/test/resources/features",
+		glue="step_definitions",
+		tags="@invalid_login"
 		)
-
 public class TestRunner {
 
 }
-	
+
