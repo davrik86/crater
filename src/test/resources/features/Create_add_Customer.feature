@@ -14,7 +14,7 @@ Background:
 @portal_Access
 	Scenario: As user I should be able to use Portal acces function
 		Given user is in New Customer page and can fill 
-		I 
+		
 	
 @add_Customer_UI_comp
 	Scenario Outline: As a user I can fill out New Customer page
