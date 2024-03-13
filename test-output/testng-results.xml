@@ -1,37 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-07T23:21:35 EST" name="Default suite" finished-at="2024-03-07T23:21:41 EST" duration-ms="6471">
+  <suite started-at="2024-03-12T23:09:06 EDT" name="Crater_Regression" finished-at="2024-03-12T23:09:11 EDT" duration-ms="4389">
     <groups>
+      <group name="regression">
+        <method signature="Items_management_api.login_test()[pri:0, instance:API_test.Items_management_api@14cd1699]" name="login_test" class="API_test.Items_management_api"/>
+      </group> <!-- regression -->
+      <group name="smoke_test">
+        <method signature="Items_management_api.login_test()[pri:0, instance:API_test.Items_management_api@14cd1699]" name="login_test" class="API_test.Items_management_api"/>
+        <method signature="Items_management_api.lsit_all_items()[pri:0, instance:API_test.Items_management_api@14cd1699]" name="lsit_all_items" class="API_test.Items_management_api"/>
+      </group> <!-- smoke_test -->
     </groups>
-    <test started-at="2024-03-07T23:21:35 EST" name="Default test" finished-at="2024-03-07T23:21:41 EST" duration-ms="6471">
+    <test started-at="2024-03-12T23:09:06 EDT" name="Crater_Smoke_Tests" finished-at="2024-03-12T23:09:11 EDT" duration-ms="4389">
       <class name="API_test.Items_management_api">
-        <test-method signature="login_test()[pri:0, instance:API_test.Items_management_api@4562e04d]" started-at="2024-03-07T23:21:35 EST" name="login_test" finished-at="2024-03-07T23:21:38 EST" duration-ms="2747" status="PASS">
+        <test-method signature="login_test()[pri:0, instance:API_test.Items_management_api@14cd1699]" started-at="2024-03-12T23:09:06 EDT" name="login_test" finished-at="2024-03-12T23:09:09 EDT" duration-ms="2483" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login_test -->
-        <test-method signature="Create_item()[pri:0, instance:API_test.Items_management_api@4562e04d]" started-at="2024-03-07T23:21:38 EST" name="Create_item" finished-at="2024-03-07T23:21:39 EST" depends-on-methods="API_test.Items_management_api.login_test" duration-ms="790" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Create_item -->
-        <test-method signature="lsit_all_items()[pri:0, instance:API_test.Items_management_api@4562e04d]" started-at="2024-03-07T23:21:39 EST" name="lsit_all_items" finished-at="2024-03-07T23:21:40 EST" depends-on-methods="API_test.Items_management_api.login_test" duration-ms="1780" status="PASS">
+        <test-method signature="lsit_all_items()[pri:0, instance:API_test.Items_management_api@14cd1699]" started-at="2024-03-12T23:09:09 EDT" name="lsit_all_items" finished-at="2024-03-12T23:09:11 EDT" depends-on-methods="API_test.Items_management_api.login_test" duration-ms="1861" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lsit_all_items -->
-        <test-method signature="get_item()[pri:0, instance:API_test.Items_management_api@4562e04d]" started-at="2024-03-07T23:21:40 EST" name="get_item" finished-at="2024-03-07T23:21:41 EST" depends-on-methods="API_test.Items_management_api.Create_item" duration-ms="462" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- get_item -->
-        <test-method signature="update_Item()[pri:0, instance:API_test.Items_management_api@4562e04d]" started-at="2024-03-07T23:21:41 EST" name="update_Item" finished-at="2024-03-07T23:21:41 EST" depends-on-methods="API_test.Items_management_api.Create_item" duration-ms="410" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- update_Item -->
-        <test-method signature="delete_item()[pri:0, instance:API_test.Items_management_api@4562e04d]" started-at="2024-03-07T23:21:41 EST" name="delete_item" finished-at="2024-03-07T23:21:41 EST" depends-on-methods="API_test.Items_management_api.update_Item" duration-ms="180" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_item -->
       </class> <!-- API_test.Items_management_api -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Crater_Smoke_Tests -->
+  </suite> <!-- Crater_Regression -->
 </testng-results>

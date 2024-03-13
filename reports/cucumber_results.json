@@ -1,1 +1,581 @@
-[{"line":2,"elements":[{"start_timestamp":"2024-03-11T19:59:05.613Z","before":[{"result":{"duration":7818587100,"status":"passed"},"match":{"location":"step_definitions.Hooks.setup()"}}],"line":36,"name":"As a User I should not be able to login","description":"","id":"access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;2","after":[{"result":{"duration":1314725400,"status":"passed"},"match":{"location":"step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"}}],"type":"scenario","keyword":"Scenario Outline","steps":[{"result":{"duration":2558690500,"status":"passed"},"line":28,"name":"I am on the login page","match":{"location":"step_definitions.AccessControlSteps.i_am_on_the_login_page()"},"keyword":"Given "},{"result":{"duration":539190200,"status":"passed"},"line":29,"name":"Login page components exists","match":{"location":"step_definitions.AccessControlSteps.login_page_components_exists()"},"keyword":"And "},{"result":{"duration":455055300,"status":"passed"},"line":30,"name":"I enter invalid \"dummy@primetechschool.com\" and invalid \"fakePass\"","match":{"arguments":[{"val":"\"dummy@primetechschool.com\"","offset":16},{"val":"\"fakePass\"","offset":56}],"location":"step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"},"keyword":"When "},{"result":{"duration":268359600,"status":"passed"},"line":31,"name":"I click on login button","match":{"location":"step_definitions.AccessControlSteps.i_click_on_login_button()"},"keyword":"And "},{"result":{"duration":766688900,"status":"passed"},"line":32,"name":"I should not be loged in","match":{"location":"step_definitions.AccessControlSteps.i_should_not_be_loged_in()"},"keyword":"Then "}],"tags":[{"name":"@regression"},{"name":"@invalid_login"}]},{"start_timestamp":"2024-03-11T19:59:19.431Z","before":[{"result":{"duration":3876135100,"status":"passed"},"match":{"location":"step_definitions.Hooks.setup()"}}],"line":37,"name":"As a User I should not be able to login","description":"","id":"access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;3","after":[{"result":{"duration":1142022400,"status":"passed"},"match":{"location":"step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"}}],"type":"scenario","keyword":"Scenario Outline","steps":[{"result":{"duration":1841926600,"status":"passed"},"line":28,"name":"I am on the login page","match":{"location":"step_definitions.AccessControlSteps.i_am_on_the_login_page()"},"keyword":"Given "},{"result":{"duration":318542400,"status":"passed"},"line":29,"name":"Login page components exists","match":{"location":"step_definitions.AccessControlSteps.login_page_components_exists()"},"keyword":"And "},{"result":{"duration":459667600,"status":"passed"},"line":30,"name":"I enter invalid \"fake@prime.com\" and invalid \"primetech@school\"","match":{"arguments":[{"val":"\"fake@prime.com\"","offset":16},{"val":"\"primetech@school\"","offset":45}],"location":"step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"},"keyword":"When "},{"result":{"duration":260152300,"status":"passed"},"line":31,"name":"I click on login button","match":{"location":"step_definitions.AccessControlSteps.i_click_on_login_button()"},"keyword":"And "},{"result":{"duration":74747000,"status":"passed"},"line":32,"name":"I should not be loged in","match":{"location":"step_definitions.AccessControlSteps.i_should_not_be_loged_in()"},"keyword":"Then "}],"tags":[{"name":"@regression"},{"name":"@invalid_login"}]},{"start_timestamp":"2024-03-11T19:59:27.417Z","before":[{"result":{"duration":3101597000,"status":"passed"},"match":{"location":"step_definitions.Hooks.setup()"}}],"line":38,"name":"As a User I should not be able to login","description":"","id":"access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;4","after":[{"result":{"duration":1301529800,"status":"passed"},"match":{"location":"step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"}}],"type":"scenario","keyword":"Scenario Outline","steps":[{"result":{"duration":1496141100,"status":"passed"},"line":28,"name":"I am on the login page","match":{"location":"step_definitions.AccessControlSteps.i_am_on_the_login_page()"},"keyword":"Given "},{"result":{"duration":423848700,"status":"passed"},"line":29,"name":"Login page components exists","match":{"location":"step_definitions.AccessControlSteps.login_page_components_exists()"},"keyword":"And "},{"result":{"duration":313198800,"status":"passed"},"line":30,"name":"I enter invalid \"\" and invalid \"\"","match":{"arguments":[{"val":"\"\"","offset":16},{"val":"\"\"","offset":31}],"location":"step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"},"keyword":"When "},{"result":{"duration":251523800,"status":"passed"},"line":31,"name":"I click on login button","match":{"location":"step_definitions.AccessControlSteps.i_click_on_login_button()"},"keyword":"And "},{"result":{"duration":130051800,"status":"passed"},"line":32,"name":"I should not be loged in","match":{"location":"step_definitions.AccessControlSteps.i_should_not_be_loged_in()"},"keyword":"Then "}],"tags":[{"name":"@regression"},{"name":"@invalid_login"}]},{"start_timestamp":"2024-03-11T19:59:34.456Z","before":[{"result":{"duration":2998718800,"status":"passed"},"match":{"location":"step_definitions.Hooks.setup()"}}],"line":39,"name":"As a User I should not be able to login","description":"","id":"access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;5","after":[{"result":{"duration":1103003200,"status":"passed"},"match":{"location":"step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"}}],"type":"scenario","keyword":"Scenario Outline","steps":[{"result":{"duration":1564304500,"status":"passed"},"line":28,"name":"I am on the login page","match":{"location":"step_definitions.AccessControlSteps.i_am_on_the_login_page()"},"keyword":"Given "},{"result":{"duration":362545100,"status":"passed"},"line":29,"name":"Login page components exists","match":{"location":"step_definitions.AccessControlSteps.login_page_components_exists()"},"keyword":"And "},{"result":{"duration":353108800,"status":"passed"},"line":30,"name":"I enter invalid \"\" and invalid \"primetech@school\"","match":{"arguments":[{"val":"\"\"","offset":16},{"val":"\"primetech@school\"","offset":31}],"location":"step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"},"keyword":"When "},{"result":{"duration":238091300,"status":"passed"},"line":31,"name":"I click on login button","match":{"location":"step_definitions.AccessControlSteps.i_click_on_login_button()"},"keyword":"And "},{"result":{"duration":87543800,"status":"passed"},"line":32,"name":"I should not be loged in","match":{"location":"step_definitions.AccessControlSteps.i_should_not_be_loged_in()"},"keyword":"Then "}],"tags":[{"name":"@regression"},{"name":"@invalid_login"}]},{"start_timestamp":"2024-03-11T19:59:41.179Z","before":[{"result":{"duration":2927264500,"status":"passed"},"match":{"location":"step_definitions.Hooks.setup()"}}],"line":40,"name":"As a User I should not be able to login","description":"","id":"access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;6","after":[{"result":{"duration":989565000,"status":"passed"},"match":{"location":"step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"}}],"type":"scenario","keyword":"Scenario Outline","steps":[{"result":{"duration":1657185800,"status":"passed"},"line":28,"name":"I am on the login page","match":{"location":"step_definitions.AccessControlSteps.i_am_on_the_login_page()"},"keyword":"Given "},{"result":{"duration":374358500,"status":"passed"},"line":29,"name":"Login page components exists","match":{"location":"step_definitions.AccessControlSteps.login_page_components_exists()"},"keyword":"And "},{"result":{"duration":398905600,"status":"passed"},"line":30,"name":"I enter invalid \"fake@primhool.com\" and invalid \"\"","match":{"arguments":[{"val":"\"fake@primhool.com\"","offset":16},{"val":"\"\"","offset":48}],"location":"step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"},"keyword":"When "},{"result":{"duration":229343300,"status":"passed"},"line":31,"name":"I click on login button","match":{"location":"step_definitions.AccessControlSteps.i_click_on_login_button()"},"keyword":"And "},{"result":{"duration":70938000,"status":"passed"},"line":32,"name":"I should not be loged in","match":{"location":"step_definitions.AccessControlSteps.i_should_not_be_loged_in()"},"keyword":"Then "}],"tags":[{"name":"@regression"},{"name":"@invalid_login"}]},{"start_timestamp":"2024-03-11T19:59:47.838Z","before":[{"result":{"duration":2928651300,"status":"passed"},"match":{"location":"step_definitions.Hooks.setup()"}}],"line":41,"name":"As a User I should not be able to login","description":"","id":"access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;7","after":[{"result":{"duration":1647082400,"status":"passed"},"match":{"location":"step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"}}],"type":"scenario","keyword":"Scenario Outline","steps":[{"result":{"duration":1603387000,"status":"passed"},"line":28,"name":"I am on the login page","match":{"location":"step_definitions.AccessControlSteps.i_am_on_the_login_page()"},"keyword":"Given "},{"result":{"duration":433538900,"status":"passed"},"line":29,"name":"Login page components exists","match":{"location":"step_definitions.AccessControlSteps.login_page_components_exists()"},"keyword":"And "},{"result":{"duration":453769000,"status":"passed"},"line":30,"name":"I enter invalid \"\" and invalid \"tech@school\"","match":{"arguments":[{"val":"\"\"","offset":16},{"val":"\"tech@school\"","offset":31}],"location":"step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"},"keyword":"When "},{"result":{"duration":269181800,"status":"passed"},"line":31,"name":"I click on login button","match":{"location":"step_definitions.AccessControlSteps.i_click_on_login_button()"},"keyword":"And "},{"result":{"duration":96984400,"status":"passed"},"line":32,"name":"I should not be loged in","match":{"location":"step_definitions.AccessControlSteps.i_should_not_be_loged_in()"},"keyword":"Then "}],"tags":[{"name":"@regression"},{"name":"@invalid_login"}]}],"name":"Access control user mnagment","description":"\t\t\t\t\tUse casses for app access control","id":"access-control-user-mnagment","keyword":"Feature","uri":"file:src/test/resources/features/Access_control.feature","tags":[{"name":"@regression","type":"Tag","location":{"line":1,"column":1}}]}]
+[ {
+  "line" : 2,
+  "elements" : [ {
+    "start_timestamp" : "2024-03-11T19:59:05.613Z",
+    "before" : [ {
+      "result" : {
+        "duration" : 7818587100,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.setup()"
+      }
+    } ],
+    "line" : 36,
+    "name" : "As a User I should not be able to login",
+    "description" : "",
+    "id" : "access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;2",
+    "after" : [ {
+      "result" : {
+        "duration" : 1314725400,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario Outline",
+    "steps" : [ {
+      "result" : {
+        "duration" : 2558690500,
+        "status" : "passed"
+      },
+      "line" : 28,
+      "name" : "I am on the login page",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_am_on_the_login_page()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 539190200,
+        "status" : "passed"
+      },
+      "line" : 29,
+      "name" : "Login page components exists",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.login_page_components_exists()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 455055300,
+        "status" : "passed"
+      },
+      "line" : 30,
+      "name" : "I enter invalid \"dummy@primetechschool.com\" and invalid \"fakePass\"",
+      "match" : {
+        "arguments" : [ {
+          "val" : "\"dummy@primetechschool.com\"",
+          "offset" : 16
+        }, {
+          "val" : "\"fakePass\"",
+          "offset" : 56
+        } ],
+        "location" : "step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 268359600,
+        "status" : "passed"
+      },
+      "line" : 31,
+      "name" : "I click on login button",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_click_on_login_button()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 766688900,
+        "status" : "passed"
+      },
+      "line" : 32,
+      "name" : "I should not be loged in",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_should_not_be_loged_in()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@regression"
+    }, {
+      "name" : "@invalid_login"
+    } ]
+  }, {
+    "start_timestamp" : "2024-03-11T19:59:19.431Z",
+    "before" : [ {
+      "result" : {
+        "duration" : 3876135100,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.setup()"
+      }
+    } ],
+    "line" : 37,
+    "name" : "As a User I should not be able to login",
+    "description" : "",
+    "id" : "access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;3",
+    "after" : [ {
+      "result" : {
+        "duration" : 1142022400,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario Outline",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1841926600,
+        "status" : "passed"
+      },
+      "line" : 28,
+      "name" : "I am on the login page",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_am_on_the_login_page()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 318542400,
+        "status" : "passed"
+      },
+      "line" : 29,
+      "name" : "Login page components exists",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.login_page_components_exists()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 459667600,
+        "status" : "passed"
+      },
+      "line" : 30,
+      "name" : "I enter invalid \"fake@prime.com\" and invalid \"primetech@school\"",
+      "match" : {
+        "arguments" : [ {
+          "val" : "\"fake@prime.com\"",
+          "offset" : 16
+        }, {
+          "val" : "\"primetech@school\"",
+          "offset" : 45
+        } ],
+        "location" : "step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 260152300,
+        "status" : "passed"
+      },
+      "line" : 31,
+      "name" : "I click on login button",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_click_on_login_button()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 74747000,
+        "status" : "passed"
+      },
+      "line" : 32,
+      "name" : "I should not be loged in",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_should_not_be_loged_in()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@regression"
+    }, {
+      "name" : "@invalid_login"
+    } ]
+  }, {
+    "start_timestamp" : "2024-03-11T19:59:27.417Z",
+    "before" : [ {
+      "result" : {
+        "duration" : 3101597000,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.setup()"
+      }
+    } ],
+    "line" : 38,
+    "name" : "As a User I should not be able to login",
+    "description" : "",
+    "id" : "access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;4",
+    "after" : [ {
+      "result" : {
+        "duration" : 1301529800,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario Outline",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1496141100,
+        "status" : "passed"
+      },
+      "line" : 28,
+      "name" : "I am on the login page",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_am_on_the_login_page()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 423848700,
+        "status" : "passed"
+      },
+      "line" : 29,
+      "name" : "Login page components exists",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.login_page_components_exists()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 313198800,
+        "status" : "passed"
+      },
+      "line" : 30,
+      "name" : "I enter invalid \"\" and invalid \"\"",
+      "match" : {
+        "arguments" : [ {
+          "val" : "\"\"",
+          "offset" : 16
+        }, {
+          "val" : "\"\"",
+          "offset" : 31
+        } ],
+        "location" : "step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 251523800,
+        "status" : "passed"
+      },
+      "line" : 31,
+      "name" : "I click on login button",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_click_on_login_button()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 130051800,
+        "status" : "passed"
+      },
+      "line" : 32,
+      "name" : "I should not be loged in",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_should_not_be_loged_in()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@regression"
+    }, {
+      "name" : "@invalid_login"
+    } ]
+  }, {
+    "start_timestamp" : "2024-03-11T19:59:34.456Z",
+    "before" : [ {
+      "result" : {
+        "duration" : 2998718800,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.setup()"
+      }
+    } ],
+    "line" : 39,
+    "name" : "As a User I should not be able to login",
+    "description" : "",
+    "id" : "access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;5",
+    "after" : [ {
+      "result" : {
+        "duration" : 1103003200,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario Outline",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1564304500,
+        "status" : "passed"
+      },
+      "line" : 28,
+      "name" : "I am on the login page",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_am_on_the_login_page()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 362545100,
+        "status" : "passed"
+      },
+      "line" : 29,
+      "name" : "Login page components exists",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.login_page_components_exists()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 353108800,
+        "status" : "passed"
+      },
+      "line" : 30,
+      "name" : "I enter invalid \"\" and invalid \"primetech@school\"",
+      "match" : {
+        "arguments" : [ {
+          "val" : "\"\"",
+          "offset" : 16
+        }, {
+          "val" : "\"primetech@school\"",
+          "offset" : 31
+        } ],
+        "location" : "step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 238091300,
+        "status" : "passed"
+      },
+      "line" : 31,
+      "name" : "I click on login button",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_click_on_login_button()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 87543800,
+        "status" : "passed"
+      },
+      "line" : 32,
+      "name" : "I should not be loged in",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_should_not_be_loged_in()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@regression"
+    }, {
+      "name" : "@invalid_login"
+    } ]
+  }, {
+    "start_timestamp" : "2024-03-11T19:59:41.179Z",
+    "before" : [ {
+      "result" : {
+        "duration" : 2927264500,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.setup()"
+      }
+    } ],
+    "line" : 40,
+    "name" : "As a User I should not be able to login",
+    "description" : "",
+    "id" : "access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;6",
+    "after" : [ {
+      "result" : {
+        "duration" : 989565000,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario Outline",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1657185800,
+        "status" : "passed"
+      },
+      "line" : 28,
+      "name" : "I am on the login page",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_am_on_the_login_page()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 374358500,
+        "status" : "passed"
+      },
+      "line" : 29,
+      "name" : "Login page components exists",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.login_page_components_exists()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 398905600,
+        "status" : "passed"
+      },
+      "line" : 30,
+      "name" : "I enter invalid \"fake@primhool.com\" and invalid \"\"",
+      "match" : {
+        "arguments" : [ {
+          "val" : "\"fake@primhool.com\"",
+          "offset" : 16
+        }, {
+          "val" : "\"\"",
+          "offset" : 48
+        } ],
+        "location" : "step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 229343300,
+        "status" : "passed"
+      },
+      "line" : 31,
+      "name" : "I click on login button",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_click_on_login_button()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 70938000,
+        "status" : "passed"
+      },
+      "line" : 32,
+      "name" : "I should not be loged in",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_should_not_be_loged_in()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@regression"
+    }, {
+      "name" : "@invalid_login"
+    } ]
+  }, {
+    "start_timestamp" : "2024-03-11T19:59:47.838Z",
+    "before" : [ {
+      "result" : {
+        "duration" : 2928651300,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.setup()"
+      }
+    } ],
+    "line" : 41,
+    "name" : "As a User I should not be able to login",
+    "description" : "",
+    "id" : "access-control-user-mnagment;as-a-user-i-should-not-be-able-to-login;;7",
+    "after" : [ {
+      "result" : {
+        "duration" : 1647082400,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "step_definitions.Hooks.wrapUp(io.cucumber.java.Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario Outline",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1603387000,
+        "status" : "passed"
+      },
+      "line" : 28,
+      "name" : "I am on the login page",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_am_on_the_login_page()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 433538900,
+        "status" : "passed"
+      },
+      "line" : 29,
+      "name" : "Login page components exists",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.login_page_components_exists()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 453769000,
+        "status" : "passed"
+      },
+      "line" : 30,
+      "name" : "I enter invalid \"\" and invalid \"tech@school\"",
+      "match" : {
+        "arguments" : [ {
+          "val" : "\"\"",
+          "offset" : 16
+        }, {
+          "val" : "\"tech@school\"",
+          "offset" : 31
+        } ],
+        "location" : "step_definitions.AccessControlSteps.i_enter_invalid_and_invalid(java.lang.String,java.lang.String)"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 269181800,
+        "status" : "passed"
+      },
+      "line" : 31,
+      "name" : "I click on login button",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_click_on_login_button()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 96984400,
+        "status" : "passed"
+      },
+      "line" : 32,
+      "name" : "I should not be loged in",
+      "match" : {
+        "location" : "step_definitions.AccessControlSteps.i_should_not_be_loged_in()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@regression"
+    }, {
+      "name" : "@invalid_login"
+    } ]
+  } ],
+  "name" : "Access control user mnagment",
+  "description" : "\t\t\t\t\tUse casses for app access control",
+  "id" : "access-control-user-mnagment",
+  "keyword" : "Feature",
+  "uri" : "file:src/test/resources/features/Access_control.feature",
+  "tags" : [ {
+    "name" : "@regression",
+    "type" : "Tag",
+    "location" : {
+      "line" : 1,
+      "column" : 1
+    }
+  } ]
+} ]
