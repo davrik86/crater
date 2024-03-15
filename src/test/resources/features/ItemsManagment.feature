@@ -1,12 +1,14 @@
 @regression
 Feature: Item Management 
 
-
-
-	@create_items_page @smoke_tests
-	Scenario: As a user, I am able to create an item or service
+	Background:
 		Given As a "level1" user, I am loged in
 		And I navigate to Items page
+		
+		
+		
+	@create_items_page @smoke_tests
+	Scenario: As a user, I am able to create an item or service		
 		When I click on Add Item button
 		Then I should be on New Item page
 		When I provide item name "NewItem" price "1200" unit "pc" and description "Just cool coffee mug"
@@ -15,13 +17,8 @@ Feature: Item Management
 		
 		
 		
-		
-		
-		
-		@create_items_page_validating_ItemName @smoke_tests
-	Scenario Outline: As a user, I am checking boundry analisys 
-		Given As a "level1" user, I am loged in
-		And I navigate to Items page
+	@create_items_page_validating_ItemName @smoke_tests
+	Scenario Outline: As a user, I am checking boundry analisys 		
 		When I click on Add Item button
 		Then I should be on New Item page
 		When I provide item name "<NewItem>" price "1300" unit "pc" and description "Just cool coffee mug"
@@ -40,9 +37,7 @@ Feature: Item Management
 		
 	
 	@validate_Items_page_comp
-	Scenario: Validate Items page components
-		Given As a "level1" user, I am loged in
-		And I navigate to Items page
+	Scenario: Validate Items page components		
 		Then I should be able to see  page titled “Items” and menu navigation path as “Home / Items”
 		And there should be two buttons with Filter and + AddItem sign on them
 		And table with Select All checkbox, NAME, UNIT, PRICE,ADDED ON
@@ -50,9 +45,7 @@ Feature: Item Management
 		And I should see Pagination navigation with the following controls
 		
 	@update_items @smoke_tests
-	Scenario: Update created Item
-		Given As a "level1" user, I am loged in
-		And I navigate to Items page
+	Scenario: Update created Item		
 		When I click on Add Item button
 		Then I should be on New Item page
 		When I provide item name "NewItem" price "1200" unit "pc" and description "Just cool coffee mug"
@@ -62,9 +55,7 @@ Feature: Item Management
 		And  I delete the created item
 		
 	@check_if_item_matches_with_saved @smoke_tests
-	Scenario: Check if created item exists in the table
-		Given As a "level1" user, I am loged in
-		And I navigate to Items page
+	Scenario: Check if created item exists in the table	
 		When I click on Add Item button
 		Then I should be on New Item page
 		When I provide item name "NewItem" price "1200" unit "pc" and description "Just cool coffee mug"
@@ -74,17 +65,13 @@ Feature: Item Management
 		And  I delete the created item	
 		
 	@delete_Singel_item_Action
-	Scenario: Delite single Item using the action button
-		Given As a "level1" user, I am loged in
-		And I navigate to Items page
+	Scenario: Delite single Item using the action button		
 		When I click on 1st item checkbox
 		And I click on Action button I select delete
 		Then I veryfy the Alert text and click ok
 	
 	@delete_Multiple_item_Action
-	Scenario: Delite multiple Item using the action button
-		Given As a "level1" user, I am loged in
-		And I navigate to Items page
+	Scenario: Delite multiple Item using the action button		
 		When I click on all item checkbox
 		And I click on Action button I select delete
 		Then I veryfy the Alert text and click ok

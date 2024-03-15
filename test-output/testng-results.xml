@@ -2,27 +2,26 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-12T23:09:06 EDT" name="Crater_Regression" finished-at="2024-03-12T23:09:11 EDT" duration-ms="4389">
+  <suite started-at="2024-03-14T21:56:57 EDT" name="Default suite" finished-at="2024-03-14T21:57:01 EDT" duration-ms="3640">
     <groups>
       <group name="regression">
-        <method signature="Items_management_api.login_test()[pri:0, instance:API_test.Items_management_api@14cd1699]" name="login_test" class="API_test.Items_management_api"/>
+        <method signature="Items_management_api.login_test()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" name="login_test" class="API_test.Items_management_api"/>
       </group> <!-- regression -->
       <group name="smoke_test">
-        <method signature="Items_management_api.login_test()[pri:0, instance:API_test.Items_management_api@14cd1699]" name="login_test" class="API_test.Items_management_api"/>
-        <method signature="Items_management_api.lsit_all_items()[pri:0, instance:API_test.Items_management_api@14cd1699]" name="lsit_all_items" class="API_test.Items_management_api"/>
+        <method signature="Items_management_api.login_test()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" name="login_test" class="API_test.Items_management_api"/>
       </group> <!-- smoke_test -->
     </groups>
-    <test started-at="2024-03-12T23:09:06 EDT" name="Crater_Smoke_Tests" finished-at="2024-03-12T23:09:11 EDT" duration-ms="4389">
+    <test started-at="2024-03-14T21:56:57 EDT" name="Default test" finished-at="2024-03-14T21:57:01 EDT" duration-ms="3640">
       <class name="API_test.Items_management_api">
-        <test-method signature="login_test()[pri:0, instance:API_test.Items_management_api@14cd1699]" started-at="2024-03-12T23:09:06 EDT" name="login_test" finished-at="2024-03-12T23:09:09 EDT" duration-ms="2483" status="PASS">
+        <test-method signature="login_test()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" started-at="2024-03-14T21:56:57 EDT" name="login_test" finished-at="2024-03-14T21:56:59 EDT" duration-ms="2167" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login_test -->
-        <test-method signature="lsit_all_items()[pri:0, instance:API_test.Items_management_api@14cd1699]" started-at="2024-03-12T23:09:09 EDT" name="lsit_all_items" finished-at="2024-03-12T23:09:11 EDT" depends-on-methods="API_test.Items_management_api.login_test" duration-ms="1861" status="PASS">
+        <test-method signature="Create_item()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" started-at="2024-03-14T21:56:59 EDT" name="Create_item" finished-at="2024-03-14T21:57:01 EDT" depends-on-methods="API_test.Items_management_api.login_test" duration-ms="1426" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- lsit_all_items -->
+        </test-method> <!-- Create_item -->
       </class> <!-- API_test.Items_management_api -->
-    </test> <!-- Crater_Smoke_Tests -->
-  </suite> <!-- Crater_Regression -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

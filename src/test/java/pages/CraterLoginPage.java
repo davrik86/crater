@@ -115,7 +115,17 @@ public class CraterLoginPage {
 	    }
 	   }
 	
-	
+	public void emailVal(String email) {
+		if(email=="") {
+			enter_Email_Reset_page.sendKeys(email);
+			Send_Reset_LinkBTTN.click();
+			Assert.assertTrue(fieldIsRequiered.isDisplayed());
+		}else{
+			enter_Email_Reset_page.sendKeys(email);
+			Assert.assertTrue(IncorrectEmail.isDisplayed());
+	}
+		
+	}
 	
 	
 }

@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.asserts.SoftAssert;
 
 import Utils.BrowserUtils;
 import Utils.Driver;
@@ -127,18 +128,52 @@ public class Customer_Functionality {
 		Assert.assertTrue(cp.new_customer_titleShip_billStreet1.isDisplayed());
 		Assert.assertTrue(cp.new_customer_titleShip_billStreet2.isDisplayed());
 		
-//		
-//		cp.String_Lenght_Error_val(cp.new_customer_titleShipp_Name, Name);		
-//		cp.String_Lenght_Error_val(cp.new_customer_titleShip_zip, zip);
-//		cp.String_Lenght_Error_val(cp.new_customer_titleShip_billStreet1, Address);
-//		cp.String_Lenght_Error_val(cp.new_customer_titleShip_billStreet2, Address);
-//		cp.String_Lenght_Error_val(cp.new_customer_titleShip_State, Name);
-//		cp.String_Lenght_Error_val(cp.new_customer_titleShip_city, Name);
-//		cp.String_Lenght_Error_val(cp.new_customer_titleShip_phone, phone);
+
 		cp.new_customer_titleBil_Country.click();
 		utils.waitForElementToBeVisible(cp.new_customer_titleBil_Country);
 		int sizeBill =utils.dropdown_items_size("(//div[@class='w-full overflow-y-auto'])[2]");
 		Assert.assertEquals(246, sizeBill);
 	}
+	//Toggle function
+	@Given("I click toggle button to validate all components")
+	public void i_click_toggle_button_to_validate_all_components() {
+	    utils.waitForElementToBeVisible(cp.Toggle_Off_BTTN);
+	    Assert.assertTrue(cp.Toggle_Off_BTTN.isDisplayed());
+	    Assert.assertTrue(cp.Toggle_Switch_txt.isDisplayed());
+	    cp.Toggle_On_BTTN.click();
+	    utils.waitForElementToBeVisible(cp.Toggle_On_text);
+	    Assert.assertTrue(cp.Toggle_On_text.isDisplayed());
+	    Assert.assertTrue(cp.Toggle_txt_beloweURL.isDisplayed());
+	    SoftAssert softAssert = new SoftAssert();
+	    String ExpUrlTxt="http://crater.primetech-apps.com/xyz/customer/login";
+	    softAssert.assertEquals(cp.Toggle_URL.getText(), ExpUrlTxt);
+	    cp.Toggle_URL_copy_BTTN.click();
+	    utils.waitForElementToBeVisible(cp.Toggle_Clip_copy_successmsg);
+	    Assert.assertTrue(cp.Toggle_Clip_copy_successmsg.isDisplayed());
+	    Assert.assertTrue(cp.Toggle_txt_beloweURL.isDisplayed());
+	  
+	    
+	    
+	}
+
+//	@Then("I would validate {string} tabs and errors")
+//	public void i_would_validate_tabs_and_errors(String pass) {
+//	   cp.String_Lenght_Error_valNO_BTTN(cp.Toggle_Password_field, pass);
+////	   cp.S
+//	}
+
+	//Sales page
 	
+	@Then("As user I should be navigated to Sales page")
+	public void as_user_i_should_be_navigated_to_sales_page() {	    
+		
+	}
+	@Then("User should see entered data and Success message")
+	public void user_should_see_entered_data_and_success_message() {
+	    
+	}
+	@Then("User data can be viewd using filter")
+	public void user_data_can_be_viewd_using_filter() {
+	    
+	}
 }

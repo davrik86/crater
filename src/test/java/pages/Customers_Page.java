@@ -135,6 +135,54 @@ public class Customers_Page {
 	@FindBy (xpath="//button[text()=' Copy from Billing']")
 	public WebElement new_customer_title_Copy_fromBTTN;
 	
+	@FindBy (xpath="//p[text()='Would you like to allow this customer to login to the Customer Portal?']")
+	public WebElement Toggle_Switch_txt;
+	
+	@FindBy (xpath="//div[text()='Customer Portal Login URL ']")
+	public WebElement Toggle_On_text;
+	
+	@FindBy (xpath="//span[text()='http://crater.primetech-apps.com/xyz/customer/login']")
+	public WebElement Toggle_URL;
+	
+	@FindBy (xpath="//p[text()='Copied url to clipboard!']")
+	public WebElement Toggle_Clip_copy_successmsg;
+	
+	@FindBy (xpath="//span[contains(text(),'Please copy & forward the ')]")
+	public WebElement Toggle_txt_beloweURL;
+	
+	@FindBy (xpath="//input[@name='password']")
+	public WebElement Toggle_Password_field;
+	
+	@FindBy (xpath="//input[@name='confirm_password']")
+	public WebElement Toggle_Password_Conf_field;
+	
+	@FindBy (xpath="//input[@name='password' and @type='text']")
+	public WebElement Toogle_Pass_TXT;
+	
+	@FindBy (xpath="//input[@name='confirm_password' and @type='text']")
+	public WebElement Toogle_Pass__ConfTXT;
+	
+	@FindBy (xpath="//span[text()='Passwords must be identical']")
+	public WebElement Toogle_Pass__ERR_notmatch;
+	
+	@FindBy (xpath="//span[text()='Password must contain 8 characters']")
+	public WebElement Toogle_Pass__ERR_musthave8Char;	
+	
+	@FindBy (xpath="(//div[@class='absolute inset-y-0 right-0 flex items-center pr-3'])[2]")
+	public WebElement Toogle_Pass__EyeBTTN;
+	
+	@FindBy (xpath="(//div[@class='absolute inset-y-0 right-0 flex items-center pr-3'])[3]")
+	public WebElement Toogle_Pass_Confrm__EyeBTTN;	
+	
+	@FindBy (xpath="//*[name()='rect' and contains(@width,'37')]")
+	public WebElement Toggle_URL_copy_BTTN;
+	
+	@FindBy (xpath="//button[@modelvalue='false']")
+	public WebElement Toggle_Off_BTTN;
+	
+	@FindBy (xpath="//button[@role='switch']")
+	public WebElement Toggle_On_BTTN;
+	
 	@FindBy (xpath="//span[text()='Field is required']")
 	public WebElement Error_fieldIsRequiered;
 	
@@ -143,6 +191,35 @@ public class Customers_Page {
 	
 	@FindBy (xpath="(//div[@class='w-full overflow-y-auto'])[1]")
     public WebElement new_customer_Basic_CurencyLS1;
+	
+	@FindBy (xpath="//h6[text()=' Sales & Expenses']")
+	public WebElement Sales_expense_title;
+	
+	@FindBy (xpath="//h6[text()='Basic Info']")
+	public WebElement Sales_expense_BasicInfo;
+	
+	@FindBy (xpath="//label[text()='Display Name']")
+	public WebElement Sales_expense_BasicInfo_DisplayName;
+	
+	@FindBy (xpath="//label[text()='Primary Contact Name']")
+	public WebElement Sales_expense_BasicInfo_PrimConName;
+	
+	@FindBy (xpath="//label[text()='Email']")
+	public WebElement Sales_expense_BasicInfo_Email;
+	
+	@FindBy (xpath="//label[text()='Currency']")
+	public WebElement Sales_expense_BasicInfo_Curency;
+	
+	@FindBy (xpath="//label[text()='Phone Number']")
+	public WebElement Sales_expense_BasicInfo_Phone;
+	
+	@FindBy (xpath="//label[text()='Website']")
+	public WebElement Sales_expense_BasicInfo_Website	;
+	
+	
+	
+	
+	
 	
 	
 	//this method for validating the Web elimet to a string lenght error
@@ -168,6 +245,21 @@ public class Customers_Page {
 			}
 		}
 	
+		public void String_Lenght_Error_valNO_BTTN(WebElement tgtEliment, String juststring) {
+			int scenario_variable= Integer.valueOf(juststring);
+			if(scenario_variable==0) {				
+				utils.waitForElementToBeVisible(Error_fieldIsRequiered);
+				Assert.assertTrue(Error_fieldIsRequiered.isDisplayed());	
+			}else if (scenario_variable>0 &&scenario_variable<8){
+				String  message= utils.RandomStringGen(scenario_variable);				
+				tgtEliment.sendKeys(message);
+				utils.waitForElementToBeVisible(Toogle_Pass__ERR_musthave8Char);
+				Assert.assertTrue(Toogle_Pass__ERR_musthave8Char.isDisplayed());			
+			}else if(scenario_variable>8) {
+				String  message= utils.RandomStringGen(scenario_variable);		
+				tgtEliment.sendKeys(message);				
+						
+		}
 	
 	
 	
@@ -181,5 +273,4 @@ public class Customers_Page {
 	
 	
 	
-	
-} 
+		}}

@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
+import org.testng.asserts.SoftAssert;
 
 import Utils.BrowserUtils;
 import Utils.Driver;
@@ -149,7 +150,8 @@ public class ItemManagment {
 	    	Assert.assertTrue(itPage.new_item_name_field_Name_must.isDisplayed());
 	    }
 	    else if(itemname.length()>50){
-	    	Assert.assertTrue(itPage.new_item_name_field_Name_Item_Name_incorrect.isDisplayed());
+	    	SoftAssert softAssert= new SoftAssert();
+	    	softAssert.assertTrue(itPage.new_item_name_field_Name_Item_Name_incorrect.isDisplayed());
 	    }
 	}
 

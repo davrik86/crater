@@ -3,11 +3,13 @@ package API_test;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Utils.BrowserUtils;
+import Utils.DBUtils;
 import Utils.DataReader;
 
 import static io.restassured.RestAssured.*;
@@ -19,7 +21,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class Items_management_api {
 	BrowserUtils utils= new BrowserUtils();
-	
+	DBUtils db=new DBUtils();
 	
 	
 	String token;
@@ -67,23 +69,33 @@ public class Items_management_api {
 	
 	@Test(dependsOnMethods = {"login_test"})
 	public void Create_item() {
+		String itemName="cool Stuff" +utils.randomNumber();
 
 		Map<String, Object> payload= new HashMap<>();
-		payload.put("name", "cool Stuff" +utils.randomNumber());
+		payload.put("name", itemName);
 		payload.put("price", 13400);
 		payload.put("unit_id", 8);//1st mistake we found  11 and belowe will be accepted
 		payload.put("description", "really cool stuff");
 		
 		 response= 
 					given().auth().oauth2("Bearer "+token).body(payload).contentType("application/json")
-					.when().post(baseURL+ "/api/v1/items");
+					.when().post(baseURL+ "/api/v1/items"); 
 
-		 
-//		 response.prettyPrint();
 		
 		item_id = response.jsonPath().get("data.id");
 		String item_name= response.jsonPath().get("data.name");
 		System.out.println(" name of the item created is "+ item_name);
+		
+		
+		String query ="Select * From items Where name='"+itemName+"'";
+		
+		
+		List<String> item_info= db.selectARecord(query);
+		for (String item:item_info) {
+			System.out.println(item);
+		}
+		System.out.println("First index is: "+ item_info.get(1));
+		Assert.assertEquals(itemName, item_info.get(1));
 		
 	}
 	@Test(dependsOnMethods = "Create_item")

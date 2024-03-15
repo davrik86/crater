@@ -12,9 +12,15 @@ Background:
 	# Table, 3dot, Filter, New Customer 
 
 @portal_Access
-	Scenario: As user I should be able to use Portal acces function
-		Given user is in New Customer page and can fill 
-		
+	Scenario Outline: As user I should be able to use Portal acces function
+		And I click to +NewCustomer button
+		And I click toggle button to validate all components
+	#	Then I would validate "<Password>" tabs and errors
+	Examples:	
+		|Password|
+		| |
+		|abcdefg|
+		|abcdefghigk|
 	
 @add_Customer_UI_comp
 	Scenario Outline: As a user I can fill out New Customer page
@@ -24,7 +30,7 @@ Background:
 		Then Validate Shipping and Billing address UI components "<Name_val>", "<Address_ST>" "<zip>" "<phone>" 
 		
 Examples:
-|Name_val|Email|zip 	|phone|Primary_Contact|Address_ST	|
+|Name_val|Email|zip 	|phone|Primary_Contact|Address_ST	| 
 |		0		 |	0	 |	0		|		0	|				0				|			0		 	|
 |		1		 |	1	 |	1		|		1	|				2				|			1			|
 |		2		 |	3	 |	2		|		2	|				3				|			2			|
@@ -44,6 +50,12 @@ Examples:
 		Then User should see entered data and Success message
 		And  User data can be viewd using filter
 		
-		
+
+
+
+
+
+
+
 		
 		

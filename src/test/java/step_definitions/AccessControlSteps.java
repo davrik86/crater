@@ -39,8 +39,9 @@ public class AccessControlSteps {
 	}
 	@When("I enter valid username and valid password")
 	public void i_enter_valid_username_and_valid_password() {
-	    acp.loginUserName.sendKeys(DataReader.getProperty("crater_username"));
-	    acp.loginPass.sendKeys(DataReader.getProperty("crater_password"));
+	    utils.sendkeysWithActionsClass(acp.loginUserName, DataReader.getProperty("crater_username"));
+	    utils.sendkeysWithActionsClass(acp.loginPass, DataReader.getProperty("crater_password"));
+	    
 	}
 	@When("I click on login button")
 	public void i_click_on_login_button() {
@@ -93,38 +94,15 @@ public class AccessControlSteps {
 		
 	}
 	
-	@When("I enter invalid {string} and invalid {string} including blank option")
-	public void i_enter_invalid_and_invalid_including_blank_option(String username, String password) {
-		userEmail =username;
-		USerPass=password;
-		acp.loginUserName.sendKeys(username);
-		acp.loginPass.sendKeys(password);
-	}
-	@Then("I should not be loged in\\(using blank)")
-	public void i_should_not_be_loged_in_using_blank() {
-		utils.waitForElementToBeVisible(acp.loginUserName);
-		Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
-	}
 	@When("I click on Forget Password? link")
 	public void i_click_on_forget_password_link() {
 	    acp.frgtPassLink.click();
 	}
 	@When("enter an invalid {string} I should see the  Errormessage")
-	public void enter_an_invalid_i_should_see_the_errormessage(String invEmail) throws InterruptedException {
+	public void enter_an_invalid_i_should_see_the_errormessage(String invEmail)  {
 		utils.waitForElementToBeVisible(acp.enter_Email_Reset_page);
-		acp.enter_Email_Reset_page.sendKeys(invEmail);
-		acp.Send_Reset_LinkBTTN.click();
-//		Thread.sleep(2000);
-		utils.waitForElementToBeVisible(acp.IncorrectEmail);
-
-		Assert.assertTrue(acp.IncorrectEmail.isDisplayed());
-		Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
-	}	  
-	
-	@When("I click with leaving  the email as blank I should see the  Errormessage")
-	public void i_click_with_leaving_the_email_as_blank_i_should_see_the_errormessage() {
-		utils.waitForElementToBeVisible(acp.Send_Reset_LinkBTTN);
-		acp.Send_Reset_LinkBTTN.click();
-		Assert.assertTrue(acp.fieldIsRequiered.isDisplayed());
+		acp.emailVal(invEmail);
+  
 	}
+	
 	}
