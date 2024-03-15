@@ -214,7 +214,7 @@ public class Customers_Page {
 	public WebElement Sales_expense_BasicInfo_Phone;
 	
 	@FindBy (xpath="//label[text()='Website']")
-	public WebElement Sales_expense_BasicInfo_Website	;
+	public WebElement Sales_expense_BasicInfo_Website;
 	
 	
 	
