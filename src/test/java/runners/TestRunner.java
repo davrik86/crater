@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 				},
 		features="./src/test/resources/features",
 		glue="step_definitions",
-		tags="@Items_Suite"
+		tags="@validate_customer_data_saved"
 		)
 public class TestRunner {
 

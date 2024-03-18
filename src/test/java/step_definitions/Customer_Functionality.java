@@ -1,11 +1,15 @@
 package step_definitions;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
@@ -160,7 +164,7 @@ public class Customer_Functionality {
 	String billing;
 //happy path and saved data validation
 	@Then("I enter the following {string}, {string} {string} {string} {string} {string} {string} \"Shipping\"	and hit the save button")
-	public void i_enter_the_following_shipping_and_hit_the_save_button(String name1, String primary_con, String zip1, String phone1, String email1, String web1, String billing1) {
+	public void i_enter_the_following_shipping_and_hit_the_save_button(String name1, String primary_con, String zip1, String phone1, String email1, String web1, String billing1) throws InterruptedException {
 		
 	 name=name1;
 	 name=fake.funnyName().name();
@@ -177,19 +181,34 @@ public class Customer_Functionality {
 	 billing=billing1;
 	 billing= fake.address().fullAddress();
 	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_DISP_name, name);
+	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_Primary_Cont_Name, primarycon);
 	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_Email, email);
 	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_Phone, phone );
 	  	utils.sendkeysWithActionsClass(cp.new_customerBasic_Website, web);
-//	 	utils.sendkeysWithActionsClass(cp.new_customer_titleBill_billStreet1, billing);
-	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_Primary_Cont_Name, primarycon);
+	 	utils.sendkeysWithActionsClass(cp.new_customer_titleBill_billStreet1, billing);
 	 	
+	 	
+	 	JavascriptExecutor jse= ( JavascriptExecutor)Driver.getDriver();
+	 	
+	 	utils.moveToWithActionsClass(cp.customer_Home_navgation_path);
 	 	utils.jsScrolltoView(cp.new_customer_SaveCust_BTTN);
+	 	Thread.sleep(2000);// to manually move mouse
+	 	jse.executeScript("window.scrollBy(0,-1200)");
+	 	utils.waitForElementToBeVisible(cp.new_customer_SaveCust_BTTN);	 
 	 	utils.clickWithActionsClass(cp.new_customer_SaveCust_BTTN); 
+		cp.new_customer_SaveCust_BTTN.click();
+	 	System.out.println(name);
 	}
 	@Then("I validate entered data is saved and Success message")
 	public void i_validate_entered_data_is_saved_and_success_message() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		
+		Assert.assertTrue(("//p[text()='"+name+"']").contains(name));
+		Assert.assertTrue(("//p[text()='"+billing+"']").contains(billing));
+		Assert.assertTrue(("//p[text()='"+phone+"']").contains(phone));
+		Assert.assertTrue(("//p[text()='"+web+"']").contains(web));
+		Assert.assertTrue(("//p[text()='"+primarycon+"']").contains(primarycon));
+		Assert.assertTrue(("//p[text()='"+email+"']").contains(email));
+		
 	}
 
 
