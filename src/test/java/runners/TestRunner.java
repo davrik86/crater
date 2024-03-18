@@ -9,11 +9,12 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		plugin= {"pretty", 
 				"html:reports/cucumber_results.html",
-				"json:reports/cucumber_results.json"
+				"json:reports/cucumber_results.json",
+				"rerun:reports/rerun.txt"
 				},
 		features="./src/test/resources/features",
 		glue="step_definitions",
-		tags="@portal_Access"
+		tags="@Items_Suite"
 		)
 public class TestRunner {
 

@@ -1,4 +1,4 @@
-@regression
+@regression @Access_Control_Suite
 Feature: Access control user mnagment
 					Use casses for app access control
 					

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-14T21:56:57 EDT" name="Default suite" finished-at="2024-03-14T21:57:01 EDT" duration-ms="3640">
+  <suite started-at="2024-03-18T00:11:22 EDT" name="Default suite" finished-at="2024-03-18T00:11:33 EDT" duration-ms="10977">
     <groups>
       <group name="regression">
         <method signature="Items_management_api.login_test()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" name="login_test" class="API_test.Items_management_api"/>
@@ -11,16 +11,24 @@
         <method signature="Items_management_api.login_test()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" name="login_test" class="API_test.Items_management_api"/>
       </group> <!-- smoke_test -->
     </groups>
-    <test started-at="2024-03-14T21:56:57 EDT" name="Default test" finished-at="2024-03-14T21:57:01 EDT" duration-ms="3640">
+    <test started-at="2024-03-18T00:11:22 EDT" name="Default test" finished-at="2024-03-18T00:11:33 EDT" duration-ms="10977">
       <class name="API_test.Items_management_api">
-        <test-method signature="login_test()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" started-at="2024-03-14T21:56:57 EDT" name="login_test" finished-at="2024-03-14T21:56:59 EDT" duration-ms="2167" status="PASS">
+        <test-method signature="login_test()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" started-at="2024-03-18T00:11:22 EDT" name="login_test" finished-at="2024-03-18T00:11:28 EDT" duration-ms="6213" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login_test -->
-        <test-method signature="Create_item()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" started-at="2024-03-14T21:56:59 EDT" name="Create_item" finished-at="2024-03-14T21:57:01 EDT" depends-on-methods="API_test.Items_management_api.login_test" duration-ms="1426" status="PASS">
+        <test-method signature="Create_item()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" started-at="2024-03-18T00:11:28 EDT" name="Create_item" finished-at="2024-03-18T00:11:32 EDT" depends-on-methods="API_test.Items_management_api.login_test" duration-ms="3641" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Create_item -->
+        <test-method signature="update_Item()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" started-at="2024-03-18T00:11:32 EDT" name="update_Item" finished-at="2024-03-18T00:11:33 EDT" depends-on-methods="API_test.Items_management_api.Create_item" duration-ms="651" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- update_Item -->
+        <test-method signature="delete_item()[pri:0, instance:API_test.Items_management_api@48f2bd5b]" started-at="2024-03-18T00:11:33 EDT" name="delete_item" finished-at="2024-03-18T00:11:33 EDT" depends-on-methods="API_test.Items_management_api.update_Item" duration-ms="316" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete_item -->
       </class> <!-- API_test.Items_management_api -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

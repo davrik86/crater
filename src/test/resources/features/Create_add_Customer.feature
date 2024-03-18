@@ -1,4 +1,4 @@
-@regression
+@regression @customerSuite
 Feature:
 
 Background:
@@ -16,6 +16,7 @@ Background:
 		And I click to +NewCustomer button
 		And I click toggle button to validate all components
 	#	Then I would validate "<Password>" tabs and errors
+	
 	Examples:	
 		|Password|
 		| |
@@ -24,11 +25,12 @@ Background:
 	
 @add_Customer_UI_comp
 	Scenario Outline: As a user I can fill out New Customer page
-		Then I should be directed to the page to validate Basic Info UI components
+		Then I validate reqiered Customers Page UI components
 		And I click to +NewCustomer button
-		And Validate Basic informatio address UI components with "<Name_val>", "<Email>" "<zip>" "<phone>" "<Primary_Contact>"
-		Then Validate Shipping and Billing address UI components "<Name_val>", "<Address_ST>" "<zip>" "<phone>" 
+		And Validate Basic informatio address UI components with "<Name_val>" "<Email>" "<zip>" "<phone>" "<Primary_Contact>"
 		
+		Then Validate Shipping and Billing address UI components "<Name_val>" "<Address_ST>" "<zip>" "<phone>" 
+
 Examples:
 |Name_val|Email|zip 	|phone|Primary_Contact|Address_ST	| 
 |		0		 |	0	 |	0		|		0	|				0				|			0		 	|
@@ -39,16 +41,16 @@ Examples:
 |		51	 |126	 |	6		|	11	|			51				|		101			|
 
 
+		
 
 @validate_customer_data_saved
-	Scenario Outline: As a user I can fill out New Customer page
-		Then I should be directed to the page to validate Basic Info UI components
+	Scenario: As a user I can check if entered data is saved
+		Then I validate reqiered Customers Page UI components
 		And I click to +NewCustomer button
-		And Validate Basic informatio address UI components with "<Name_val>", "<Email>" "<zip>" "<phone>" "<Primary_Contact>"
-		Then Validate Shipping and Billing address UI components "<Name_val>", "<Address_ST>" "<zip>" "<phone>"
-		And As user I should be navigated to Sales page
-		Then User should see entered data and Success message
-		And  User data can be viewd using filter
+		And I enter the following "DisName", "Primary_con" "zip" "phone" "Email" "Website" "Billing" "Shipping"	and hit the save button 	
+		Then I validate entered data is saved and Success message 
+		
+		
 		
 
 

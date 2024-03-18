@@ -47,7 +47,7 @@ public class Customers_Page {
 	@FindBy (xpath="//h3[(text()='New Customer')]")
 	public WebElement new_customer_title;
 	
-	@FindBy (xpath="//button[(text()=' Save Customer')]")
+	@FindBy (xpath="//button[text()=' Save Customer']")
 	public WebElement new_customer_SaveCust_BTTN;
 	
 	@FindBy (xpath="(//input[@name='name'])[1]")
@@ -231,7 +231,7 @@ public class Customers_Page {
 				Assert.assertTrue(Error_fieldIsRequiered.isDisplayed());	
 			}else if (scenario_variable>0 &&scenario_variable<3){
 				String  message= utils.RandomStringGen(scenario_variable);
-				new_customer_SaveCust_BTTN.click();
+//				new_customer_SaveCust_BTTN.click();
 				tgtEliment.sendKeys(message);
 				utils.waitForElementToBeVisible(Error_field_Name_must);
 				Assert.assertTrue(Error_field_Name_must.isDisplayed());			

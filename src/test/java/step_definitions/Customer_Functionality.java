@@ -10,6 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
+import com.github.javafaker.Faker;
+
 import Utils.BrowserUtils;
 import Utils.Driver;
 import io.cucumber.java.en.Given;
@@ -28,7 +30,7 @@ public class Customer_Functionality {
 	CraterItems itemsPage = new CraterItems();
 	Itemspage itPage = new Itemspage();
 	Customers_Page cp= new Customers_Page();
-	
+	Faker fake= new Faker();
 	
 
 	@Given("I click on Customers page and navigate to page")
@@ -37,8 +39,8 @@ public class Customer_Functionality {
 		cp.dashboard_CUSTOMER_tab.click();
 		
 	}
-	@Then("I should be directed to the page to validate Basic Info UI components")
-	public void i_should_be_directed_to_the_page_to_validate_basic_info_ui_components() throws InterruptedException {
+	@Then("I validate reqiered Customers Page UI components")
+	public void i_validate_reqiered_customers_page_ui_components() {
 		
 	   utils.waitForElementToBeVisible(itPage.items_page_3dot_menu);
 	   Assert.assertTrue(cp.customer_Customer_title.isDisplayed());
@@ -65,8 +67,8 @@ public class Customer_Functionality {
 		Assert.assertTrue(cp.new_customer_SaveCust_BTTN.isDisplayed());
 	    
 	}
-	@Then("Validate Basic informatio address UI components with {string}, {string} {string} {string} {string}")
-	public void validate_basic_informatio_address_ui_components_with(String Name, String email, String zip , String phone, String primary) throws InterruptedException {
+	@Then("Validate Basic informatio address UI components with {string} {string} {string} {string} {string}")
+	public void validate_basic_informatio_address_ui_components_with(String Name, String email, String zip, String phone, String primary) {
 		Assert.assertTrue(cp.new_customer_title.isDisplayed());
 		Assert.assertTrue(cp.new_customerBasic_Curency.isDisplayed());
 		Assert.assertTrue(cp.new_customerBasic_DISP_name.isDisplayed());
@@ -90,7 +92,7 @@ public class Customer_Functionality {
 
 
 	}
-	@Then("Validate Shipping and Billing address UI components {string}, {string} {string} {string}")
+	@Then("Validate Shipping and Billing address UI components {string} {string} {string} {string}")
 	public void validate_shipping_and_billing_address_ui_components(String Name, String Address, String zip, String phone) {
 	
 		Assert.assertTrue(cp.new_customer_titleBill_Name.isDisplayed());
@@ -101,7 +103,7 @@ public class Customer_Functionality {
 		Assert.assertTrue(cp.new_customer_titleBill_city.isDisplayed());
 		Assert.assertTrue(cp.new_customer_titleBill_State.isDisplayed());
 		Assert.assertTrue(cp.new_customer_titleBill_Phone.isDisplayed());
-		
+				
 		cp.String_Lenght_Error_val(cp.new_customer_titleBill_Name, Name);		
 		cp.String_Lenght_Error_val(cp.new_customer_titleBill_zip, zip);
 		cp.String_Lenght_Error_val(cp.new_customer_titleBill_billStreet1, Address);
@@ -119,20 +121,13 @@ public class Customer_Functionality {
 		Assert.assertTrue(cp.new_customer_titleBill_State.getText().contains(cp.new_customer_titleShip_State.getText()));
 		Assert.assertTrue(cp.new_customer_titleBill_Phone.getText().contains(cp.new_customer_titleShip_phone.getText()));
 		
-		Assert.assertTrue(cp.new_customer_titleShipp_Name.isDisplayed());
-		Assert.assertTrue(cp.new_customer_titleShip_zip.isDisplayed());
-		Assert.assertTrue(cp.new_customer_titleShip_State.isDisplayed());
-		Assert.assertTrue(cp.new_customer_titleShip_phone.isDisplayed());
-		Assert.assertTrue(cp.new_customer_titleShip_Country.isDisplayed());
-		Assert.assertTrue(cp.new_customer_titleShip_city.isDisplayed());
-		Assert.assertTrue(cp.new_customer_titleShip_billStreet1.isDisplayed());
-		Assert.assertTrue(cp.new_customer_titleShip_billStreet2.isDisplayed());
 		
-
 		cp.new_customer_titleBil_Country.click();
 		utils.waitForElementToBeVisible(cp.new_customer_titleBil_Country);
 		int sizeBill =utils.dropdown_items_size("(//div[@class='w-full overflow-y-auto'])[2]");
 		Assert.assertEquals(246, sizeBill);
+
+		
 	}
 	//Toggle function
 	@Given("I click toggle button to validate all components")
@@ -155,22 +150,75 @@ public class Customer_Functionality {
 	    
 	    
 	}
+	
+	String name;
+	String primarycon;
+	String zip;
+	String phone;
+	String email;
+	String web;
+	String billing;
+//happy path and saved data validation
+	@Then("I enter the following {string}, {string} {string} {string} {string} {string} {string} \"Shipping\"	and hit the save button")
+	public void i_enter_the_following_shipping_and_hit_the_save_button(String name1, String primary_con, String zip1, String phone1, String email1, String web1, String billing1) {
+		
+	 name=name1;
+	 name=fake.funnyName().name();
+	 primarycon=primary_con;
+	 primarycon= fake.name().lastName();
+	 zip=zip1;
+	 zip=fake.number().digits(5);
+	 phone=phone1;
+	 phone=fake.phoneNumber().cellPhone();
+	 email=email1;
+	 email=fake.internet().emailAddress();
+	 web=web1;
+	 web= "http://"+fake.internet().url();
+	 billing=billing1;
+	 billing= fake.address().fullAddress();
+	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_DISP_name, name);
+	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_Email, email);
+	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_Phone, phone );
+	  	utils.sendkeysWithActionsClass(cp.new_customerBasic_Website, web);
+//	 	utils.sendkeysWithActionsClass(cp.new_customer_titleBill_billStreet1, billing);
+	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_Primary_Cont_Name, primarycon);
+	 	
+	 	utils.jsScrolltoView(cp.new_customer_SaveCust_BTTN);
+	 	utils.clickWithActionsClass(cp.new_customer_SaveCust_BTTN); 
+	}
+	@Then("I validate entered data is saved and Success message")
+	public void i_validate_entered_data_is_saved_and_success_message() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
 
-//	@Then("I would validate {string} tabs and errors")
-//	public void i_would_validate_tabs_and_errors(String pass) {
-//	   cp.String_Lenght_Error_valNO_BTTN(cp.Toggle_Password_field, pass);
-////	   cp.S
-//	}
 
 	//Sales page
 	
 	@Then("As user I should be navigated to Sales page")
-	public void as_user_i_should_be_navigated_to_sales_page() {	    
+	public void as_user_i_should_be_navigated_to_sales_page() {	 
+		Assert.assertTrue(cp.Sales_expense_title.isDisplayed());
+		Assert.assertTrue(cp.Sales_expense_BasicInfo.isDisplayed());
+		Assert.assertTrue(cp.Sales_expense_BasicInfo_Curency.isDisplayed());
+		Assert.assertTrue(cp.Sales_expense_BasicInfo_DisplayName.isDisplayed());
+		Assert.assertTrue(cp.Sales_expense_BasicInfo_Email.isDisplayed());
+		Assert.assertTrue(cp.Sales_expense_BasicInfo_Phone.isDisplayed());
+		Assert.assertTrue(cp.Sales_expense_BasicInfo_PrimConName.isDisplayed());
+		Assert.assertTrue(cp.Sales_expense_BasicInfo_Website.isDisplayed());
+		
 		
 	}
+	
 	@Then("User should see entered data and Success message")
 	public void user_should_see_entered_data_and_success_message() {
-	    
+		Assert.assertTrue(cp.new_customer_titleShipp_Name.isDisplayed());
+		Assert.assertTrue(cp.new_customer_titleShip_zip.isDisplayed());
+		Assert.assertTrue(cp.new_customer_titleShip_State.isDisplayed());
+		Assert.assertTrue(cp.new_customer_titleShip_phone.isDisplayed());
+		Assert.assertTrue(cp.new_customer_titleShip_Country.isDisplayed());
+		Assert.assertTrue(cp.new_customer_titleShip_city.isDisplayed());
+		Assert.assertTrue(cp.new_customer_titleShip_billStreet1.isDisplayed());
+		Assert.assertTrue(cp.new_customer_titleShip_billStreet2.isDisplayed());
 	}
 	@Then("User data can be viewd using filter")
 	public void user_data_can_be_viewd_using_filter() {

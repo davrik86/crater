@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\D\AppData\Local\Temp\testng-eclipse-1886508597\testng-customsuite.xml</span>
+                    <span>C:\Users\D\AppData\Local\Temp\testng-eclipse--1073354854\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -108,7 +108,17 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="API_test.Items_management_api" class="method navigator-link" hash-for-method="delete_item">delete_item</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="API_test.Items_management_api" class="method navigator-link" hash-for-method="login_test">login_test</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="API_test.Items_management_api" class="method navigator-link" hash-for-method="update_Item">update_Item</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -138,9 +148,23 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="delete_item">
+                  </a> <!-- delete_item -->
+                  <span class="method-name">delete_item</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="login_test">
                   </a> <!-- login_test -->
                   <span class="method-name">login_test</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="update_Item">
+                  </a> <!-- update_Item -->
+                  <span class="method-name">update_Item</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -148,7 +172,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\D\AppData\Local\Temp\testng-eclipse-1886508597\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\D\AppData\Local\Temp\testng-eclipse--1073354854\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -159,7 +183,9 @@
     &lt;classes&gt;
       &lt;class name=&quot;API_test.Items_management_api&quot;&gt;
         &lt;methods&gt;
+          &lt;include name=&quot;delete_item&quot;/&gt;
           &lt;include name=&quot;login_test&quot;/&gt;
+          &lt;include name=&quot;update_Item&quot;/&gt;
           &lt;include name=&quot;Create_item&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- API_test.Items_management_api --&gt;
@@ -218,20 +244,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'login_test')
 data.setCell(0, 2, 'API_test.Items_management_api')
-data.setCell(0, 3, 2167);
+data.setCell(0, 3, 6213);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Create_item')
 data.setCell(1, 2, 'API_test.Items_management_api')
-data.setCell(1, 3, 1426);
+data.setCell(1, 3, 3641);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'update_Item')
+data.setCell(2, 2, 'API_test.Items_management_api')
+data.setCell(2, 3, 651);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'delete_item')
+data.setCell(3, 2, 'API_test.Items_management_api')
+data.setCell(3, 3, 316);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -246,17 +280,13 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">4 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">API_test.Items_management_api</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">get_item</span>
-                <br/>
-                <span class="ignored-method-name">update_Item</span>
-                <br/>
-                <span class="ignored-method-name">delete_item</span>
                 <br/>
                 <span class="ignored-method-name">lsit_all_items</span>
                 <br/>
@@ -277,7 +307,15 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">Create_item</span>
-                <span class="method-start">2180 ms</span>
+                <span class="method-start">6238 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">update_Item</span>
+                <span class="method-start">9885 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">delete_item</span>
+                <span class="method-start">10542 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

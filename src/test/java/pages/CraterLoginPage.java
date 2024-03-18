@@ -117,11 +117,11 @@ public class CraterLoginPage {
 	
 	public void emailVal(String email) {
 		if(email=="") {
-			enter_Email_Reset_page.sendKeys(email);
+			utils.sendkeysWithActionsClass(enter_Email_Reset_page, email);
 			Send_Reset_LinkBTTN.click();
 			Assert.assertTrue(fieldIsRequiered.isDisplayed());
 		}else{
-			enter_Email_Reset_page.sendKeys(email);
+			utils.sendkeysWithActionsClass(enter_Email_Reset_page, email); 
 			Assert.assertTrue(IncorrectEmail.isDisplayed());
 	}
 		

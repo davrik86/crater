@@ -19,6 +19,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.github.javafaker.Faker;
+
 public class BrowserUtils {
 
 	Alert alert;
@@ -26,7 +28,7 @@ public class BrowserUtils {
 	Actions act;
 	Select select;
 	JavascriptExecutor js;
-
+	Faker fk;
 	public void waitUntilElementVisibleWithLocator(By locator) {
 		wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
