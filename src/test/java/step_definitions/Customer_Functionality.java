@@ -184,16 +184,17 @@ public class Customer_Functionality {
 	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_Primary_Cont_Name, primarycon);
 	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_Email, email);
 	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_Phone, phone );
-	  	utils.sendkeysWithActionsClass(cp.new_customerBasic_Website, web);
 	 	utils.sendkeysWithActionsClass(cp.new_customer_titleBill_billStreet1, billing);
+	 	utils.sendkeysWithActionsClass(cp.new_customerBasic_Website, web);
 	 	
 	 	
-	 	JavascriptExecutor jse= ( JavascriptExecutor)Driver.getDriver();
 	 	
-	 	utils.moveToWithActionsClass(cp.customer_Home_navgation_path);
-	 	utils.jsScrolltoView(cp.new_customer_SaveCust_BTTN);
-	 	Thread.sleep(2000);// to manually move mouse
-	 	jse.executeScript("window.scrollBy(0,-1200)");
+	 	JavascriptExecutor jse =( JavascriptExecutor)Driver.getDriver();
+	 	
+//	 	utils.moveToWithActionsClass(cp.customer_Home_navgation_path);
+//	 	utils.jsScrolltoView(cp.new_customer_SaveCust_BTTN);
+	 	Thread.sleep(500);// to manually move mouse
+	 	jse.executeScript("window.scrollBy(0,-100)", "");
 	 	utils.waitForElementToBeVisible(cp.new_customer_SaveCust_BTTN);	 
 	 	utils.clickWithActionsClass(cp.new_customer_SaveCust_BTTN); 
 		cp.new_customer_SaveCust_BTTN.click();
